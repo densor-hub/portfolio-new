@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy, Suspense } from "react";
+import "./App.css";
+import { ThemeContextProvider } from "./context/themeColorsContext";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-function App() {
+const Root = lazy(() => {
+  return import("./UI/Introduction");
+});
+const Skills = lazy(() => {
+  return import("./UI/Skills");
+});
+
+const Projects = lazy(() => {
+  return import("./UI/Projects");
+});
+const router = createBrowserRouter([
+  { path: "/", Component: Root },
+  { path: "skills", Component: Skills },
+  { path: "projects", Component: Projects },
+]);
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContextProvider>
+      <Suspense fallback={<div>Loadind..</div>}>
+        <RouterProvider router={router}></RouterProvider>
+      </Suspense>
+    </ThemeContextProvider>
   );
-}
-
+};
 export default App;
