@@ -12,7 +12,7 @@ const Contact = () => {
   return (
     <main className="flex bg-[#201f1f]  text-white  min-h-screen h-full">
       <NavBar />
-      <section className=" bg-[#0f0e0e] flex flex-col justify-center items-center w-full">
+      <section className=" bg-[#0f0e0e] flex flex-col justify-center items-center w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px]">
         <section>
           <div className="text-3xl font-bold" style={{ color: currentTheme }}>
             Heyya,
@@ -24,16 +24,6 @@ const Contact = () => {
         </section>
 
         <section className="flex">
-          <div className="p-2">
-            <div className=" w-fit mx-auto">
-              <FaPhoneAlt
-                size={50}
-                className="border-2 rounded-full p-2 animate-bounce"
-              />
-            </div>
-            <div style={{ color: currentTheme }}>+233 (0) 244 598 879</div>
-          </div>
-
           <div className="p-2">
             <div className="w-fit mx-auto">
               <MdEmail
@@ -77,7 +67,7 @@ const Contact = () => {
             </div>
             <div>
               <a href={"https://linkedin.com/david-ensor"} target="_blank">
-                LinkIn
+                LinkedIn
               </a>
             </div>
           </div>

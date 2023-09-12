@@ -6,6 +6,7 @@ import AAIL from "../images/cynosure.png";
 import PersolIcon from "../images/cynosure.png";
 import useThemeContext from "../hooks/useThemeContext";
 import Button from "../components/Button";
+import { BsArrowDown } from "react-icons/bs";
 
 const Resume = () => {
   const { currentTheme } = useThemeContext();
@@ -18,8 +19,8 @@ const Resume = () => {
         end: "Present",
       },
       activities: [
-        "Work as the front end  developer on BOST ONE system for Nation Petroleom Authority (NPA) of Ghana",
-        "Work as a front end develper on the team for Enterprise Relations and Data Management System for National Petroleom Authority",
+        "Work as the front end  developer on BOST ONE system for National Petroleum Authority (NPA) of Ghana",
+        "Work as a front end develper on the team for Enterprise Relations and Data Management System for National Petroleum Authority",
       ],
       icon: PersolIcon,
     },
@@ -32,8 +33,8 @@ const Resume = () => {
       },
       activities: [
         "Built the landing page  of the website for Abibeck Software Solutions",
-        "Spearheaded the development of Cynosure,  an enterprize point of sale, relations and data management application",
-        "Lead a team of four to develop Muzic, a website creator for musicians, tailored for a client",
+        "Spearheaded the development of Cynosure,  an enterprize  relations , data management and point of sale application.",
+        "Worked as a fullstack developer on Muzic project, a website creator for musicians, tailored for a client",
       ],
       icon: AbibeckIcon,
     },
@@ -45,7 +46,7 @@ const Resume = () => {
         end: "July 2021",
       },
       activities: [
-        "Redesigned interface of Canteen App from a less resposive interface to a modern day attractive and fully resposive interface",
+        "Participated in the development of the AAIL Canteen App as a fullstack developer",
       ],
       icon: AAIL,
     },
@@ -68,10 +69,10 @@ const Resume = () => {
   return (
     <main className="flex  bg-[#201f1f]  text-white  min-h-screen h-full">
       <NavBar />
-      <section className="relative w-full min-h-screen bg-[#0f0e0e]">
-        <div className="pt-20 text-center pb-10">
+      <section className="relative  min-h-screen bg-[#0f0e0e] w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)]  left-[69px] sm:left-[116px] overflow-x-hidden">
+        <div className="pt-10 text-center pb-10">
           <div className="text-sm text-slate-400">
-            OVER {Number(DateGetter?.getFullYear()) - Number(2019)} YEARS
+            {Number(DateGetter?.getFullYear()) - Number(2019)}+ YEARS
             PROFESSIONAL EXPERIENCE
           </div>
           <div className="text-3xl font-bold" style={{ color: currentTheme }}>
@@ -86,16 +87,28 @@ const Resume = () => {
                 style={{ backgroundColor: currentTheme }}
               ></div>
             </section>
-            <section className="relative bg-transparent top-10">
+            <section className="relative bg-transparent top-10 ">
               {resumeContent?.current?.map((elements, index) => {
                 return (
-                  <div key={index} className="relative flex  h-[300px]   ">
+                  <section key={index} className="h-fit min-h-[150px]">
                     {index % 2 === 0 ? (
-                      <section className="w-full flex  relative ">
-                        <section className="absolute left-0 flex w-[50%] mx-auto  pb-10  justify-between ">
-                          <div className="w-[70%] mx-auto  bg-[#242424] text-sm flex relative  rounded-lg ">
-                            <div className=" bg-transparentborde-2 relative left-[100%] top-4">
-                              <div className="border-[#242424]  top-4 border-[15px] border-t-transparent border-b-transparent border-r-transparent"></div>
+                      <section className="w-full block md:flex  relative">
+                        <section className=" md:relative left-0 flex flex-col md:flex-row w-[100%] md:w-[100%] mx-auto  pb-10  justify-between  ">
+                          {/* <div>
+                            <img
+                              src={elements?.icon}
+                              className="relative block md:hidden w-[60px] h-[60px] rounded-full  border-4 mx-auto"
+                              style={{ borderColor: currentTheme }}
+                            ></img>
+                          </div> */}
+                          <BsArrowDown
+                            size={40}
+                            color={currentTheme}
+                            className="mx-auto relative top-1 block md:hidden"
+                          />
+                          <div className="h-[100%] w-[90%]  md:w-[70%]  mx-auto  bg-[#3a3737c1] text-sm flex  relative md:left-[3vw] rounded-lg  ">
+                            <div className="hidden md:block bg-transparentborde-2 relative left-[100%] top-4">
+                              <div className="border-[#3a3737c1]  top-4 border-[15px] border-t-transparent border-b-transparent border-r-transparent"></div>
                             </div>
                             <section className="p-4">
                               <div
@@ -104,7 +117,15 @@ const Resume = () => {
                               >
                                 <i>{elements?.role}</i>
                               </div>
+
+                              <div className="block md:hidden relative h-fit text-slate-400 text-sm font-semibold w-[100%] ">
+                                <div className="w-[45%]">
+                                  {elements?.duration?.start} -{" "}
+                                  {elements?.duration?.end}
+                                </div>
+                              </div>
                               <div>{elements?.company}</div>
+
                               <section>
                                 {elements?.activities?.map((acts, key) => {
                                   return (
@@ -126,38 +147,55 @@ const Resume = () => {
                           </div>
                           <img
                             src={elements?.icon}
-                            className="relative left-8 w-[60px] h-[60px] rounded-full  border-4"
+                            className="relative hidden md:block left-8 w-[60px] h-[60px] rounded-full  border-4"
                             style={{ borderColor: currentTheme }}
                           ></img>
                         </section>
-                        <div className="relative h-fit text-slate-400 text-sm font-semibold top-5 w-[100%] text-left">
-                          <div className="w-[45%] absolute right-0 ">
+                        <div className="hidden md:block relative h-fit text-slate-400 text-sm font-semibold top-5 w-[100%] text-left">
+                          <div className="w-[85%] absolute right-0 ">
                             {elements?.duration?.start} -{" "}
                             {elements?.duration?.end}
                           </div>
                         </div>
                       </section>
                     ) : (
-                      <section className="w-full  flex relative">
+                      <section className="w-full h-fit block md:flex relative ">
                         <div className="relative text-right h-fit text-slate-400 text-sm font-semibold top-5 w-[100%]">
-                          <div className="absolute w-[45%] left-0">
+                          <div className="hidden md:block absolute w-[89%] left-0  ">
                             {elements?.duration?.start} -{" "}
                             {elements?.duration?.end}
                           </div>
                         </div>
-                        <section className="absolute right-0 flex w-[50%] pb-10  mx-auto  justify-between ">
+                        <section className="realtive md:relative flex flex-col md:flex-row w-[90%] md:w-[100%] pb-10  mx-auto  justify-between ">
                           <img
                             src={elements?.icon}
-                            className="relative right-8 w-[60px] h-[60px] rounded-full  border-4"
+                            className="hidden md:block relative right-8 w-[60px] h-[60px] rounded-full  border-4"
                             style={{ borderColor: currentTheme }}
                           ></img>
-                          <div className="w-[70%] mx-auto  bg-[#242424] text-sm flex relative  rounded-lg ">
+
+                          {/* <img
+                            src={elements?.icon}
+                            className="block md:hidden relative w-[60px] h-[60px] rounded-full  border-4 mx-auto"
+                            style={{ borderColor: currentTheme }}
+                          ></img> */}
+                          <BsArrowDown
+                            size={40}
+                            color={currentTheme}
+                            className="mx-auto relative top-1 block md:hidden"
+                          />
+                          <div className="w-full md:w-[70%] mx-auto  bg-[#3a3737c1] text-sm flex relative md:right-[3vw] rounded-lg  ">
                             <section className="p-4">
                               <div
                                 className="font-bold"
                                 style={{ color: currentTheme }}
                               >
                                 <i>{elements?.role}</i>
+                              </div>
+                              <div className="relative h-fit text-slate-400 text-sm font-semibold w-[100%]">
+                                <div className="block md:hidden  ">
+                                  {elements?.duration?.start} -{" "}
+                                  {elements?.duration?.end}
+                                </div>
                               </div>
                               <div>{elements?.company}</div>
                               <section>
@@ -178,14 +216,14 @@ const Resume = () => {
                                 })}
                               </section>
                             </section>{" "}
-                            <div className=" bg-transparent absolute left-0 ">
-                              <div className="relative right-[100%] border-[#242424]  top-4 border-[15px] border-t-transparent border-b-transparent border-l-transparent"></div>
+                            <div className="hidden md:block bg-transparent absolute left-0 ">
+                              <div className="relative right-[100%] border-[#3a3737c1] top-4 border-[15px] border-t-transparent border-b-transparent border-l-transparent"></div>
                             </div>
                           </div>
                         </section>
                       </section>
                     )}
-                  </div>
+                  </section>
                 );
               })}
             </section>

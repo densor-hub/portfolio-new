@@ -11,7 +11,7 @@ const ImageContainer = ({ image }) => {
 
       <img
         src={image}
-        className="w-[200px] lg:w-[300px] h-[250px] lg:h-[350px]"
+        className="w-[180px] lg:w-[300px] h-[180px] lg:h-[350px]"
       ></img>
 
       <div

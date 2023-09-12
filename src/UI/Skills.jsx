@@ -29,7 +29,6 @@ const NavBar = lazy(() => {
   return import("../components/Nav");
 });
 const Skills = () => {
-  const navigateTo = useNavigate();
   const content = useRef({
     languages: {
       data: [
@@ -56,10 +55,12 @@ const Skills = () => {
       id: "frontend",
     },
     backend: {
-      data: [
-        { title: "Node Js", icon: nodejsIcon },
-        { title: ".Net-core", icon: dotNetIcon },
-      ],
+      mainTech: {
+        data: [
+          { title: "Node Js", icon: nodejsIcon },
+          { title: ".Net-core", icon: dotNetIcon },
+        ],
+      },
       id: "backend",
       databases: {
         data: [
@@ -86,33 +87,11 @@ const Skills = () => {
   return (
     <main className="flex bg-[#201f1f]  text-white  min-h-screen h-full">
       <NavBar />
-      <section className="h-full min-h-screen flex justify-center items-center w-full bg-[#0f0e0e] ">
+      <section className="h-full min-h-screen flex justify-center items-center bg-[#0f0e0e] w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px]">
         <section className=" w-full h-fit relative top-[50%] ">
           <section className="text-center">
-            {/* <button
-            className="w-[20%] border-2 p-4"
-            style={
-              currentContent?.id === "languages"
-                ? {
-                    borderColor: currentTheme,
-                    backgroundColor: currentTheme,
-                    color: "black",
-                  }
-                : {
-                    borderColor: currentTheme,
-                    backgroundColor: "transparent",
-                    color: "white",
-                  }
-            }
-            onClick={() => {
-              setCurrentContent(content?.current?.languages);
-            }}
-          >
-            LANGUAGES
-          </button> */}
-
             <button
-              className="w-[20%] border-2 p-4"
+              className="w-[30%] md:w-[20%] border-2 p-4"
               style={
                 currentContent?.id === "frontend"
                   ? {
@@ -134,7 +113,7 @@ const Skills = () => {
             </button>
 
             <button
-              className="w-[20%] border-2 p-4"
+              className="w-[30%] md:w-[20%] border-2 p-4"
               style={
                 currentContent?.id === "backend"
                   ? {
@@ -157,17 +136,7 @@ const Skills = () => {
           </section>
 
           <section className=" mx-auto flex justify-center">
-            {/* <div className="w-[20%]   flex justify-center">
-            <div
-              className="h-[100px] w-1"
-              style={
-                currentContent?.id === "languages"
-                  ? { backgroundColor: `${currentTheme}` }
-                  : { backgroundColor: "transparent" }
-              }
-            ></div>
-          </div> */}
-            <div className="w-[20%] flex justify-center">
+            <div className="w-[30%] md:w-[20%] flex justify-center">
               <div
                 className="h-[100px] w-1"
                 style={
@@ -177,7 +146,7 @@ const Skills = () => {
                 }
               ></div>
             </div>
-            <div className="w-[20%] flex justify-center">
+            <div className="w-[30%] md:w-[20%] flex justify-center">
               <div
                 className="h-[100px] w-1"
                 style={
@@ -189,7 +158,7 @@ const Skills = () => {
             </div>
           </section>
 
-          <section>
+          <section className="w-fit mx-auto">
             <div className="text-center">
               {currentContent?.id === "languages" ? (
                 <i>
@@ -207,10 +176,7 @@ const Skills = () => {
                 </i>
               )}
             </div>
-            <section
-              className="border-0 w-fit mx-auto flex flex-wrap"
-              style={{ borderColor: currentTheme }}
-            >
+            <section className=" mx-auto flex flex-wrap justify-center items-center w-fit">
               {currentContent?.data?.map((elements, index) => {
                 return (
                   <div key={index} className="p-4 text-center">
@@ -224,6 +190,32 @@ const Skills = () => {
                   </div>
                 );
               })}
+
+              {currentContent?.mainTech && (
+                <section className=" ld:mx-auto">
+                  <div
+                    className="text-center py-2 font-bold text-xl"
+                    style={{ color: currentTheme }}
+                  >
+                    Main
+                  </div>
+                  <section className="border-0 w-fit mx-auto flex flex-wrap">
+                    {currentContent?.mainTech?.data?.map((elements, index) => {
+                      return (
+                        <div key={index} className="p-4 text-center">
+                          <div className="animate-bounce">
+                            <img
+                              src={elements.icon}
+                              className="w-16 h-16 rounded-full bg-center bg-no-repeat border-2 border-white p-2 "
+                            ></img>
+                          </div>
+                          <div>{elements?.title}</div>
+                        </div>
+                      );
+                    })}
+                  </section>
+                </section>
+              )}
 
               {currentContent?.databases && (
                 <section>
@@ -253,12 +245,12 @@ const Skills = () => {
 
               {currentContent?.OtherTools && (
                 <section>
-                  {/* <div
-                  className="text-center py-5 font-bold text-xl"
-                  style={{ color: currentTheme }}
-                >
-                  Other Tools
-                </div> */}
+                  <div
+                    className="text-center py-1 font-bold text-md"
+                    style={{ color: currentTheme }}
+                  >
+                    Other Tools
+                  </div>
                   <section className="border-0 w-fit mx-auto flex flex-wrap">
                     {currentContent?.OtherTools?.data?.map(
                       (elements, index) => {

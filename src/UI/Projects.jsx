@@ -82,25 +82,31 @@ const Projects = () => {
   }, [render]);
 
   return (
-    <main className="flex  bg-[#201f1f]  text-white">
+    <main className="flex  bg-[#201f1f]  text-white relative">
       <NavBar />
-      <section className="w-full h-full min-h-screen bg-[#0f0e0e] flex flex-col  justify-center items-center max-w-screen overflow-x-hidden">
-        <section className="flex min-w-screen h-fit relative ">
+      <section className=" h-full min-h-screen bg-[#0f0e0e] flex flex-col  justify-center items-center max-w-screen overflow-x-hidden w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px] ">
+        <section className="w-full grid grid-cols-1 md:grid-cols-2 xl:flex flex-wrap min-w-screen h-fit relative">
           {displayedProjects?.map((elements, index) => {
             return (
               <main
                 ref={addToLiveProjectRefs}
                 key={index}
-                style={{
-                  width: `${
-                    innerWidth / projects?.current?.length -
-                    (3 / 100) * innerWidth
-                  }px`,
-                }}
-                className="flex flex-col justify-center items-center"
+                style={
+                  innerWidth > 1150
+                    ? {
+                        width: `${
+                          innerWidth / projects?.current?.length -
+                          (3 / 100) * innerWidth
+                        }px`,
+                      }
+                    : { width: "100%" }
+                }
+                className={
+                  "flex flex-wrap flex-col justify-center items-center"
+                }
               >
                 <div
-                  className="w-[250px] h-[400px]  border-4 rounded-xl"
+                  className="w-[250px] h-[350px] my-5 border-4 rounded-xl"
                   style={{ borderColor: currentTheme }}
                 >
                   <div className="font-bold py-4 text-center">
@@ -108,7 +114,7 @@ const Projects = () => {
                   </div>
                   <img
                     src={elements?.logo}
-                    className="w-[50%] rounded-full mx-auto p-2 border-2"
+                    className="w-[50%] rounded-full mx-auto p-2 border-2 border-white"
                   ></img>
                   <div className="border-0 p-4">{elements?.description}</div>
 
