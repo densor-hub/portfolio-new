@@ -9,7 +9,7 @@ const Button = ({ pathname, label }) => {
       onClick={() => {
         navigateTo(pathname);
       }}
-      className="rounded-lg w-[170px] h-[50px] NextBTN"
+      className="rounded-lg w-[100px] sm:w-[170px]  h-[50px] NextBTN"
       style={{
         border: `2px solid ${currentTheme} `,
       }}
