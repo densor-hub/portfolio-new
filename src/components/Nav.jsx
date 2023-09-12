@@ -4,7 +4,7 @@ import { BsBriefcaseFill } from "react-icons/bs";
 import { GiArchiveResearch } from "react-icons/gi";
 import { BiSolidPhone } from "react-icons/bi";
 import useThemeContext from "../hooks/useThemeContext";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
 
 const NavBar = () => {
@@ -35,20 +35,22 @@ const NavBar = () => {
   }, []);
 
   return (
-    <main className="min-h-screen h-full w-fit bg-[#201f1f] static flex justify-center items-center p-2 sm:p-8">
+    <main className=" h-full w-fit bg-[#201f1f]  flex justify-center items-center px-2 sm:px-8">
       <section>
-        <section style={{ color: `${currentTheme}` }}>
-          <div
-            className={style.inconContainer}
-            style={{ borderColor: `${currentTheme}` }}
-          >
-            <ImHome size={30}></ImHome>
-          </div>
-          <div className={style.iconLabel}>HOME</div>
-        </section>
+        <Link to={"/"}>
+          <section style={{ color: `${currentTheme}` }}>
+            <div
+              className={style.inconContainer}
+              style={{ borderColor: `${currentTheme}` }}
+            >
+              <ImHome size={30}></ImHome>
+            </div>
+            <div className={style.iconLabel}>HOME</div>
+          </section>
+        </Link>
 
         <div
-          className="w-1 h-[12vh] mx-auto"
+          className="w-1 h-[10vh] mx-auto"
           style={
             UrlsPathnames?.find((e) => {
               return e?.toLowerCase() === "skills";
@@ -58,32 +60,35 @@ const NavBar = () => {
           }
         ></div>
 
-        <section
-          style={
-            UrlsPathnames?.find((e) => {
-              return e?.toLowerCase() === "skills";
-            })
-              ? { color: `${currentTheme}` }
-              : { color: "#525252" }
-          }
-        >
-          <div
-            className={style.inconContainer}
+        <Link to={"/skills"}>
+          {" "}
+          <section
             style={
               UrlsPathnames?.find((e) => {
                 return e?.toLowerCase() === "skills";
               })
-                ? { borderColor: `${currentTheme}` }
-                : {}
+                ? { color: `${currentTheme}` }
+                : { color: "#525252" }
             }
           >
-            <FaCode size={30} />
-          </div>
-          <div className={style.iconLabel}>SKILLS</div>
-        </section>
+            <div
+              className={style.inconContainer}
+              style={
+                UrlsPathnames?.find((e) => {
+                  return e?.toLowerCase() === "skills";
+                })
+                  ? { borderColor: `${currentTheme}` }
+                  : {}
+              }
+            >
+              <FaCode size={30} />
+            </div>
+            <div className={style.iconLabel}>SKILLS</div>
+          </section>
+        </Link>
 
         <div
-          className="w-1 h-[12vh] mx-auto"
+          className="w-1 h-[10vh] mx-auto"
           style={
             UrlsPathnames?.find((e) => {
               return e?.toLowerCase() === "projects";
@@ -93,32 +98,34 @@ const NavBar = () => {
           }
         ></div>
 
-        <section
-          style={
-            UrlsPathnames?.find((e) => {
-              return e?.toLowerCase() === "projects";
-            })
-              ? { color: `${currentTheme}` }
-              : { color: "#525252" }
-          }
-        >
-          <div
-            className={style.inconContainer}
+        <Link to={"/projects"}>
+          <section
             style={
               UrlsPathnames?.find((e) => {
                 return e?.toLowerCase() === "projects";
               })
-                ? { borderColor: `${currentTheme}` }
-                : {}
+                ? { color: `${currentTheme}` }
+                : { color: "#525252" }
             }
           >
-            <BsBriefcaseFill size={30}></BsBriefcaseFill>
-          </div>
-          <div className={style.iconLabel}>PROJECTS</div>
-        </section>
+            <div
+              className={style.inconContainer}
+              style={
+                UrlsPathnames?.find((e) => {
+                  return e?.toLowerCase() === "projects";
+                })
+                  ? { borderColor: `${currentTheme}` }
+                  : {}
+              }
+            >
+              <BsBriefcaseFill size={30}></BsBriefcaseFill>
+            </div>
+            <div className={style.iconLabel}>PROJECTS</div>
+          </section>
+        </Link>
 
         <div
-          className="w-1 h-[12vh] mx-auto"
+          className="w-1 h-[10vh] mx-auto"
           style={
             UrlsPathnames?.find((e) => {
               return e?.toLowerCase() === "resume";
@@ -128,32 +135,35 @@ const NavBar = () => {
           }
         ></div>
 
-        <section
-          style={
-            UrlsPathnames?.find((e) => {
-              return e?.toLowerCase() === "resume";
-            })
-              ? { color: `${currentTheme}` }
-              : { color: "#525252" }
-          }
-        >
-          <div
-            className={style.inconContainer}
+        <Link to={"/resume"}>
+          {" "}
+          <section
             style={
               UrlsPathnames?.find((e) => {
                 return e?.toLowerCase() === "resume";
               })
-                ? { borderColor: `${currentTheme}` }
-                : {}
+                ? { color: `${currentTheme}` }
+                : { color: "#525252" }
             }
           >
-            <GiArchiveResearch size={30}></GiArchiveResearch>
-          </div>
-          <div className={style.iconLabel}>RESUME</div>
-        </section>
+            <div
+              className={style.inconContainer}
+              style={
+                UrlsPathnames?.find((e) => {
+                  return e?.toLowerCase() === "resume";
+                })
+                  ? { borderColor: `${currentTheme}` }
+                  : {}
+              }
+            >
+              <GiArchiveResearch size={30}></GiArchiveResearch>
+            </div>
+            <div className={style.iconLabel}>RESUME</div>
+          </section>
+        </Link>
 
         <div
-          className="w-1 h-[12vh] mx-auto"
+          className="w-1 h-[10vh] mx-auto"
           style={
             UrlsPathnames?.find((e) => {
               return e?.toLowerCase() === "contact";
@@ -163,29 +173,31 @@ const NavBar = () => {
           }
         ></div>
 
-        <section
-          style={
-            UrlsPathnames?.find((e) => {
-              return e?.toLowerCase() === "contact";
-            })
-              ? { color: `${currentTheme}` }
-              : { color: "#525252" }
-          }
-        >
-          <div
-            className={style.inconContainer}
+        <Link to={"/contact"}>
+          <section
             style={
               UrlsPathnames?.find((e) => {
                 return e?.toLowerCase() === "contact";
               })
-                ? { borderColor: `${currentTheme}` }
-                : {}
+                ? { color: `${currentTheme}` }
+                : { color: "#525252" }
             }
           >
-            <BiSolidPhone size={30}></BiSolidPhone>
-          </div>
-          <div className={style.iconLabel}>CONTACT</div>
-        </section>
+            <div
+              className={style.inconContainer}
+              style={
+                UrlsPathnames?.find((e) => {
+                  return e?.toLowerCase() === "contact";
+                })
+                  ? { borderColor: `${currentTheme}` }
+                  : {}
+              }
+            >
+              <BiSolidPhone size={30}></BiSolidPhone>{" "}
+            </div>
+            <div className={style.iconLabel}>CONTACT</div>
+          </section>
+        </Link>
       </section>
     </main>
   );
