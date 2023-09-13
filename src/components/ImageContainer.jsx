@@ -8,13 +8,13 @@ const ImageContainer = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      imageContainerRef.current.style.transform = "translateY(-35%)";
+      imageContainerRef.current.style.transform = "translateY(-50%)";
     }, 10);
   }, []);
   return (
     <section
       ref={imageContainerRef}
-      className="w-fit relative  sm:top-[35%]  duration-500  transition-transform  flex flex-col  py-7 lg:py-14 px-5 lg:px-10 mx-auto justify-center items-center"
+      className="w-fit relative  top-[50%]  duration-500  transition-transform  flex flex-col  py-7 lg:py-14 px-5 lg:px-10 mx-auto justify-center items-center"
     >
       <div
         className={`w-10  h-20 border-0 border-t-4 border-l-4  absolute left-0 top-0`}

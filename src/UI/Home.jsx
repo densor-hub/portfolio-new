@@ -50,8 +50,8 @@ const Intro = () => {
   return (
     <main className="flex min-h-screen bg-[#201f1f] text-white overflow-x-hidden">
       <NavBar />
-      <section className="min-h-screen flex justify-center items-center w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px]">
-        <section className=" flex flex-col sm:flex-row w-full relative  bg-[#0f0e0e] h-full">
+      <section className="min-h-screen bg-[#0f0e0e]  flex justify-center items-center w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px] ">
+        <section className=" flex flex-col sm:flex-row w-full relative  h-fit sm:h-full">
           <section className="w-[100%] sm:w-[300px] lg:w-[500px] pb-4 px-10  h-fit  sm:relative top-[50%] sm:translate-y-[-50%] ">
             <article className="pb-5 z-10 ">
               <header
@@ -102,7 +102,7 @@ const Intro = () => {
           </section>
 
           {/* //Note that image is already animated in image container */}
-          <div className="w-full">
+          <div className="w-full   h-[240px] sm:h-full">
             <ImageContainer image={image}></ImageContainer>
           </div>
         </section>

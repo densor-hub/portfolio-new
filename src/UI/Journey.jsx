@@ -31,6 +31,16 @@ const Journey = () => {
           }
         });
       }, 10);
+    } else {
+      setTimeout(() => {
+        ExperienceContainerRefs?.current?.forEach((element, index) => {
+          if (index % 2 !== 0) {
+            element.style.transform = "translateX(8vw)";
+          } else {
+            element.style.transform = "translateX(-8vw)";
+          }
+        });
+      }, 10);
     }
   }, []);
 
@@ -72,14 +82,15 @@ const Journey = () => {
                           <BsArrowDown
                             size={40}
                             color={currentTheme}
-                            className="mx-auto relative top-1 block md:hidden"
+                            className="mx-auto relative  block md:hidden"
+                            style={{ position: "relative", top: "2.5px" }}
                           />
                           <div
-                            className="h-[100%] w-[90%]  md:w-[70%]  mx-auto  bg-[#3a3737c1] text-sm flex  relative md:right-[5vw] rounded-lg transition-transform duration-500 "
+                            className="h-[100%] w-[90%]  md:w-[70%]  mx-auto  bg-[#3a3737] text-sm flex  relative md:right-[5vw] rounded-lg transition-transform duration-500 "
                             ref={addToExperiencesContainerRef}
                           >
                             <div className="hidden md:block bg-transparentborde-2 relative left-[100%] top-4">
-                              <div className="border-[#3a3737c1]  top-4 border-[15px] border-t-transparent border-b-transparent border-r-transparent"></div>
+                              <div className="border-[#3a3737]  top-4 border-[15px] border-t-transparent border-b-transparent border-r-transparent"></div>
                             </div>
                             <section className="p-4">
                               <div
@@ -166,10 +177,11 @@ const Journey = () => {
                           <BsArrowDown
                             size={40}
                             color={currentTheme}
-                            className="mx-auto relative top-1 block md:hidden"
+                            className="mx-auto relative  block md:hidden"
+                            style={{ position: "relative", top: "2.5px" }}
                           />
                           <div
-                            className="w-full md:w-[70%] mx-auto  bg-[#3a3737c1] text-sm flex relative md:left-[5vw] rounded-lg transition-transform duration-500"
+                            className="w-full md:w-[70%] mx-auto  bg-[#3a3737] text-sm flex relative md:left-[5vw] rounded-lg transition-transform duration-500"
                             ref={addToExperiencesContainerRef}
                           >
                             <section className="p-4">
@@ -217,7 +229,7 @@ const Journey = () => {
                               </section>
                             </section>{" "}
                             <div className="hidden md:block bg-transparent absolute left-0 ">
-                              <div className="relative right-[100%] border-[#3a3737c1] top-4 border-[15px] border-t-transparent border-b-transparent border-l-transparent"></div>
+                              <div className="relative right-[100%] border-[#3a3737] top-4 border-[15px] border-t-transparent border-b-transparent border-l-transparent"></div>
                             </div>
                           </div>
                         </section>
