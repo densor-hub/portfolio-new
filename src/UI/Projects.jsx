@@ -1,9 +1,7 @@
 import { lazy, useEffect, useRef, useState } from "react";
-import MuzicLogo from "../images/muzica.jpg";
-import AbiBeckLogo from "../images/abibeck logo.jpg";
-import CynoSureLogo from "../images/cynosure.png";
 import useThemeContext from "../hooks/useThemeContext";
 import Button from "../components/Button";
+import { projectsData } from "../data/data";
 
 const NavBar = lazy(() => {
   return import("../components/Nav");
@@ -11,40 +9,7 @@ const NavBar = lazy(() => {
 
 const Projects = () => {
   const { currentTheme } = useThemeContext();
-  const projects = useRef([
-    {
-      name: "Muzic",
-      url: "http://muzic.goldcoastuni.com",
-      logo: MuzicLogo,
-      technologies: ["React JS", "Node JS", "MongoDB", "CSS", "GraphQL"],
-      description:
-        "Muzic is a web based wesite creator application for musicians ",
-    },
-    {
-      name: "AbiBeck",
-      url: "https://abibeck.xyz",
-      logo: AbiBeckLogo,
-      technologies: ["React JS", "Tailwind CSS"],
-      description:
-        "Very attractive modern day website for AbiBeck Software Solutions.",
-    },
-    {
-      name: "Cynosure",
-      url: "http://apps.abibeck.xyz/cynosure",
-      logo: CynoSureLogo,
-      technologies: ["React JS", "Tailwind CSS", "MSSMS", "SQL", "GraphQL"],
-      description:
-        "Very attractive modern day website for AbiBeck Software Solutions.",
-    },
-    {
-      name: "Aabea Eng. Ltd.",
-      url: "http://apps.abibeck.xyz/cynosure",
-      logo: CynoSureLogo,
-      technologies: ["React JS", "Tailwind CSS", "MSSMS", "SQL", "GraphQL"],
-      description:
-        "Very attractive modern day website for Asabea Engineering Limited.",
-    },
-  ]);
+  const projects = useRef(projectsData);
 
   const [displayedProjects, setDisplayedProjects] = useState([]);
 
@@ -116,7 +81,9 @@ const Projects = () => {
                     src={elements?.logo}
                     className="w-[50%] rounded-full mx-auto p-2 border-2 border-white"
                   ></img>
-                  <div className="border-0 p-4">{elements?.description}</div>
+                  <div className="border-0 p-4 text-center">
+                    {elements?.description}
+                  </div>
 
                   <div className="text-center">
                     <a

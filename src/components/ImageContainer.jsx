@@ -1,9 +1,20 @@
+import { useEffect, useRef } from "react";
 import useThemeContext from "../hooks/useThemeContext";
 
 const ImageContainer = ({ image }) => {
   const { currentTheme } = useThemeContext();
+  const imageContainerRef = useRef();
+
+  useEffect(() => {
+    setTimeout(() => {
+      imageContainerRef.current.style.transform = "translateY(-35%)";
+    }, 10);
+  }, []);
   return (
-    <section className="w-fit  sm:top-[50%] sm:-translate-y-[50%] flex flex-col relative py-7 lg:py-14 px-5 lg:px-10 mx-auto justify-center items-center">
+    <section
+      ref={imageContainerRef}
+      className="w-fit relative  sm:top-[35%]  duration-500  transition-transform  flex flex-col  py-7 lg:py-14 px-5 lg:px-10 mx-auto justify-center items-center"
+    >
       <div
         className={`w-10  h-20 border-0 border-t-4 border-l-4  absolute left-0 top-0`}
         style={{ borderColor: currentTheme }}

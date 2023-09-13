@@ -3,8 +3,9 @@ import "./App.css";
 import { ThemeContextProvider } from "./context/themeColorsContext";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import Loading from "./UI/Loading";
 const Root = lazy(() => {
-  return import("./UI/Intro");
+  return import("./UI/Home");
 });
 const Skills = lazy(() => {
   return import("./UI/Skills");
@@ -15,7 +16,7 @@ const Projects = lazy(() => {
 });
 
 const Resume = lazy(() => {
-  return import("./UI/Resume");
+  return import("./UI/Journey");
 });
 
 const Contact = lazy(() => {
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <ThemeContextProvider>
-      <Suspense fallback={<div>Loadind..</div>}>
+      <Suspense fallback={<Loading />}>
         <RouterProvider router={router}></RouterProvider>
       </Suspense>
     </ThemeContextProvider>

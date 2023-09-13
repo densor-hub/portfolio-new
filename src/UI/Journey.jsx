@@ -1,71 +1,39 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import NavBar from "../components/Nav";
-import AbibeckIcon from "../images/abibeck logo.jpg";
-import AsabeaIcon from "../images/cynosure.png";
-import AAIL from "../images/cynosure.png";
-import PersolIcon from "../images/cynosure.png";
 import useThemeContext from "../hooks/useThemeContext";
 import Button from "../components/Button";
 import { BsArrowDown } from "react-icons/bs";
+import { ImLink } from "react-icons/im";
+import { Link } from "react-router-dom";
+import { journeyData } from "../data/data";
 
 const Resume = () => {
   const { currentTheme } = useThemeContext();
-  const resumeContent = useRef([
-    {
-      company: "Persol Systems Limited",
-      role: "Full Stack Developer",
-      duration: {
-        start: "Aug 2023 ",
-        end: "Present",
-      },
-      activities: [
-        "Work as the front end  developer on BOST ONE system for National Petroleum Authority (NPA) of Ghana",
-        "Work as a front end develper on the team for Enterprise Relations and Data Management System for National Petroleum Authority",
-      ],
-      icon: PersolIcon,
-    },
-    {
-      company: "AbiBeck Software Solutions",
-      role: "Full Stack Developer",
-      duration: {
-        start: "Sept 2021 ",
-        end: "June 2023",
-      },
-      activities: [
-        "Built the landing page  of the website for Abibeck Software Solutions",
-        "Spearheaded the development of Cynosure,  an enterprize  relations , data management and point of sale application.",
-        "Worked as a fullstack developer on Muzic project, a website creator for musicians, tailored for a client",
-      ],
-      icon: AbibeckIcon,
-    },
-    {
-      company: "AngloGold Ashanti Iduapriem Mine",
-      role: "Applications Support",
-      duration: {
-        start: "Sept 2020 ",
-        end: "July 2021",
-      },
-      activities: [
-        "Participated in the development of the AAIL Canteen App as a fullstack developer",
-      ],
-      icon: AAIL,
-    },
-    {
-      company: "Asabea Engineering Limited",
-      role: "Interim Software Developer",
-      duration: {
-        start: "May 2019 ",
-        end: "August 2019",
-      },
-      activities: [
-        "Designed and built a website for the company",
-        "Built an enterpise relations and data management application for the company",
-      ],
-      icon: AsabeaIcon,
-    },
-  ]);
+  const resumeContent = useRef(journeyData);
 
   const DateGetter = new Date();
+
+  const ExperienceContainerRefs = useRef([]);
+  const addToExperiencesContainerRef = (element) => {
+    if (element && !ExperienceContainerRefs?.current?.includes(element)) {
+      ExperienceContainerRefs?.current?.push(element);
+    }
+  };
+
+  useEffect(() => {
+    if (window?.innerWidth > 600) {
+      setTimeout(() => {
+        ExperienceContainerRefs?.current?.forEach((element, index) => {
+          if (index % 2 == 0) {
+            element.style.transform = "translateX(8vw)";
+          } else {
+            element.style.transform = "translateX(-8vw)";
+          }
+        });
+      }, 10);
+    }
+  }, []);
+
   return (
     <main className="flex  bg-[#201f1f]  text-white  min-h-screen h-full">
       <NavBar />
@@ -106,7 +74,10 @@ const Resume = () => {
                             color={currentTheme}
                             className="mx-auto relative top-1 block md:hidden"
                           />
-                          <div className="h-[100%] w-[90%]  md:w-[70%]  mx-auto  bg-[#3a3737c1] text-sm flex  relative md:left-[3vw] rounded-lg  ">
+                          <div
+                            className="h-[100%] w-[90%]  md:w-[70%]  mx-auto  bg-[#3a3737c1] text-sm flex  relative md:right-[5vw] rounded-lg transition-transform duration-500 "
+                            ref={addToExperiencesContainerRef}
+                          >
                             <div className="hidden md:block bg-transparentborde-2 relative left-[100%] top-4">
                               <div className="border-[#3a3737c1]  top-4 border-[15px] border-t-transparent border-b-transparent border-r-transparent"></div>
                             </div>
@@ -124,7 +95,19 @@ const Resume = () => {
                                   {elements?.duration?.end}
                                 </div>
                               </div>
-                              <div>{elements?.company}</div>
+                              <div>
+                                <Link
+                                  to={elements?.url}
+                                  target="_blank"
+                                  className="flex hover:underline"
+                                >
+                                  {elements?.company}{" "}
+                                  <ImLink
+                                    color={currentTheme}
+                                    className="ml-1"
+                                  />
+                                </Link>
+                              </div>
 
                               <section>
                                 {elements?.activities?.map((acts, key) => {
@@ -183,7 +166,10 @@ const Resume = () => {
                             color={currentTheme}
                             className="mx-auto relative top-1 block md:hidden"
                           />
-                          <div className="w-full md:w-[70%] mx-auto  bg-[#3a3737c1] text-sm flex relative md:right-[3vw] rounded-lg  ">
+                          <div
+                            className="w-full md:w-[70%] mx-auto  bg-[#3a3737c1] text-sm flex relative md:left-[5vw] rounded-lg transition-transform duration-500"
+                            ref={addToExperiencesContainerRef}
+                          >
                             <section className="p-4">
                               <div
                                 className="font-bold"
@@ -197,7 +183,19 @@ const Resume = () => {
                                   {elements?.duration?.end}
                                 </div>
                               </div>
-                              <div>{elements?.company}</div>
+                              <div>
+                                <Link
+                                  to={elements?.url}
+                                  target="_blank"
+                                  className="flex hover:underline"
+                                >
+                                  {elements?.company}{" "}
+                                  <ImLink
+                                    color={currentTheme}
+                                    className="ml-1"
+                                  />
+                                </Link>
+                              </div>
                               <section>
                                 {elements?.activities?.map((acts, key) => {
                                   return (
