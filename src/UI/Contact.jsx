@@ -1,10 +1,8 @@
-import { useRef } from "react";
 import NavBar from "../components/Nav";
 import { BsTwitter, BsGithub, BsLinkedin, BsArrowDown } from "react-icons/bs";
-import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import Button from "../components/Button";
 import useThemeContext from "../hooks/useThemeContext";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const { currentTheme } = useThemeContext();
@@ -42,49 +40,55 @@ const Contact = () => {
         <section className="flex py-10">
           <div className=" text-sm text-center m-2">
             <div>
-              <a href={"https://github.com/densor-hub"} target="_blank">
+              <Link href={"https://github.com/densor-hub"} target="_blank">
                 <BsGithub
                   size={50}
                   className="border-2 rounded-full p-2 animate-bounce"
                 />
-              </a>
+              </Link>
             </div>
             <div>
-              <a href={"https://github.com/densor-hub"} target="_blank">
+              <Link href={"https://github.com/densor-hub"} target="_blank">
                 Git Hub
-              </a>
+              </Link>
             </div>
           </div>
 
           <div className=" text-sm text-center m-2">
             <div>
-              <a href={"https://github.com/densor-hub"} target="_blank">
+              <Link
+                href={"https://www.linkedin.com/in/david-ensor-13032b215/"}
+                target="_blank"
+              >
                 <BsLinkedin
                   size={50}
                   className="border-2 rounded-full p-2 animate-bounce"
                 />
-              </a>
+              </Link>
             </div>
             <div>
-              <a href={"https://linkedin.com/david-ensor"} target="_blank">
+              <Link
+                href={"https://www.linkedin.com/in/david-ensor-13032b215/"}
+                target="_blank"
+              >
                 LinkedIn
-              </a>
+              </Link>
             </div>
           </div>
 
           <div className=" text-sm text-center m-2">
             <div>
-              <a href={"https://twitter.com/nanaessel-deeg"} target="_blank">
+              <Link href={"https://twitter.com/nanaessel_deeg"} target="_blank">
                 <BsTwitter
                   size={50}
                   className="border-2 rounded-full p-2 animate-bounce"
                 />
-              </a>
+              </Link>
             </div>
             <div>
-              <a href={"https://twitter.com/nanaessel-deeg"} target="_blank">
+              <Link href={"https://twitter.com/nanaessel_deeg"} target="_blank">
                 Twitter
-              </a>
+              </Link>
             </div>
           </div>
         </section>

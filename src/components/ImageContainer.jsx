@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import useThemeContext from "../hooks/useThemeContext";
+import { PersolInfoData } from "../data/data";
 
-const ImageContainer = ({ image }) => {
+const ImageContainer = () => {
   const { currentTheme } = useThemeContext();
   const imageContainerRef = useRef();
 
@@ -21,7 +22,8 @@ const ImageContainer = ({ image }) => {
       ></div>
 
       <img
-        src={image}
+        src={PersolInfoData?.img}
+        alt={PersolInfoData?.name}
         className="w-[180px] lg:w-[300px] h-[180px] lg:h-[350px]"
       ></img>
 

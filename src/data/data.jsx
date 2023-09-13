@@ -1,10 +1,103 @@
+//journey
 import PersolIcon from "../images/persol-icon.jpg";
 import AngloGoldIcon2 from "../images/anglogold-icon.png";
 import AbibeckIcon from "../images/abibeck logo.jpg";
 import AsabeaIcon from "../images/cynosure.png";
+
+//Projects
 import MuzicLogo from "../images/muzica.jpg";
 import AbiBeckLogo from "../images/abibeck logo.jpg";
 import CynoSureLogo from "../images/cynosure.png";
+
+//personal Data
+import DavidEnsor from "../images/david-ensor.jpg";
+
+//skills
+import JSicon from "../images/jsicon.png";
+import typeScriptIcon from "../images/typescripticon.png";
+import JavaIcon from "../images/java.png";
+import PythonIcon from "../images/python.jpg";
+import CsharpIcon from "../images/c#.png";
+import CplusplusIcon from "../images/c++.png";
+import SQLIcon from "../images/sql.jpg";
+import reactIcon from "../images/reacticon.png";
+import NextJsIcon from "../images/nextjs.png";
+import ReactNativeIcon from "../images/reactnative.png";
+import vueIcon from "../images/vueicon.png";
+import ReduxIcon from "../images/redux.png";
+import tailwindCSSIcon from "../images/tailwindicon.jpg";
+import boostrapIcon from "../images/boostrap.jpg";
+import nodejsIcon from "../images/nodeicon.png";
+import dotNetIcon from "../images/netcore.png";
+import MSSMSicon from "../images/mssms.png";
+import postgresQL from "../images/postgresql.png";
+import mongoDbIcon from "../images/mongoDb.png";
+import gitIcon from "../images/git.png";
+import postmanIcon from "../images/postman.jpeg";
+import graphQL from "../images/graphql.jpg";
+
+//PersoalInfoData and Skills are single objects
+//ProjectsData and JourneyData are arrays
+
+export const PersolInfoData = {
+  img: DavidEnsor,
+  name: "David Ensor",
+  professions: ["Software Developer", "Musician"],
+  overview:
+    "I am results-focused Full-stack developer with strength in both Front-end and Back-end developments. I leverage my expertise, resourcefulness and diligence to make positive impact. I pride myself as a very innovative Software Engineer who shows much appreciation for collective efforts.",
+};
+
+export const SkillsData = {
+  languages: {
+    data: [
+      { title: "JavaScript", icon: JSicon },
+      { title: "TypeScript", icon: typeScriptIcon },
+      { title: "Java", icon: JavaIcon },
+      { title: "Python", icon: PythonIcon },
+      { title: "C#", icon: CsharpIcon },
+      { title: "C++", icon: CplusplusIcon },
+      { title: "SQL", icon: SQLIcon },
+    ],
+    id: "languages",
+  },
+  frontend: {
+    data: [
+      { title: "React JS", icon: reactIcon },
+      { title: "Next JS", icon: NextJsIcon },
+      { title: "React Native", icon: ReactNativeIcon },
+      { title: "Vue JS", icon: vueIcon },
+      { title: "Redux", icon: ReduxIcon },
+      { title: "Tailwind CSS", icon: tailwindCSSIcon },
+      { title: "Boostrap CSS", icon: boostrapIcon },
+    ],
+    id: "frontend",
+  },
+  backend: {
+    mainTech: {
+      data: [
+        { title: "Node Js", icon: nodejsIcon },
+        { title: ".Net-core", icon: dotNetIcon },
+      ],
+    },
+    id: "backend",
+    databases: {
+      data: [
+        { title: "MSSMS", icon: MSSMSicon },
+        { title: "PostgresQL", icon: postgresQL },
+        { title: "MongoDB", icon: mongoDbIcon },
+      ],
+      id: "databases",
+    },
+    OtherTools: {
+      data: [
+        { title: "Git", icon: gitIcon },
+        { title: "GraphQL", icon: graphQL },
+        { title: "Postman", icon: postmanIcon },
+      ],
+      id: "other tools",
+    },
+  },
+};
 
 export const projectsData = [
   {

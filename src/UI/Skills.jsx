@@ -1,86 +1,14 @@
 import { lazy, useRef, useState } from "react";
 import useThemeContext from "../hooks/useThemeContext";
-import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
-import JSicon from "../images/jsicon.png";
-import typeScriptIcon from "../images/typescripticon.png";
-import JavaIcon from "../images/java.png";
-import PythonIcon from "../images/python.jpg";
-import CsharpIcon from "../images/c#.png";
-import CplusplusIcon from "../images/c++.png";
-import SQLIcon from "../images/sql.jpg";
-import reactIcon from "../images/reacticon.png";
-import NextJsIcon from "../images/nextjs.png";
-import ReactNativeIcon from "../images/reactnative.png";
-import vueIcon from "../images/vueicon.png";
-import ReduxIcon from "../images/redux.png";
-import tailwindCSSIcon from "../images/tailwindicon.jpg";
-import boostrapIcon from "../images/boostrap.jpg";
-import nodejsIcon from "../images/nodeicon.png";
-import dotNetIcon from "../images/netcore.png";
-import MSSMSicon from "../images/mssms.png";
-import postgresQL from "../images/postgresql.png";
-import mongoDbIcon from "../images/mongoDb.png";
-import gitIcon from "../images/git.png";
-import postmanIcon from "../images/postman.jpeg";
-import graphQL from "../images/graphql.jpg";
+import { SkillsData } from "../data/data";
 
 const NavBar = lazy(() => {
   return import("../components/Nav");
 });
 const Skills = () => {
-  const content = useRef({
-    languages: {
-      data: [
-        { title: "JavaScript", icon: JSicon },
-        { title: "TypeScript", icon: typeScriptIcon },
-        { title: "Java", icon: JavaIcon },
-        { title: "Python", icon: PythonIcon },
-        { title: "C#", icon: CsharpIcon },
-        { title: "C++", icon: CplusplusIcon },
-        { title: "SQL", icon: SQLIcon },
-      ],
-      id: "languages",
-    },
-    frontend: {
-      data: [
-        { title: "React JS", icon: reactIcon },
-        { title: "Next JS", icon: NextJsIcon },
-        { title: "React Native", icon: ReactNativeIcon },
-        { title: "Vue JS", icon: vueIcon },
-        { title: "Redux", icon: ReduxIcon },
-        { title: "Tailwind CSS", icon: tailwindCSSIcon },
-        { title: "Boostrap CSS", icon: boostrapIcon },
-      ],
-      id: "frontend",
-    },
-    backend: {
-      mainTech: {
-        data: [
-          { title: "Node Js", icon: nodejsIcon },
-          { title: ".Net-core", icon: dotNetIcon },
-        ],
-      },
-      id: "backend",
-      databases: {
-        data: [
-          { title: "MSSMS", icon: MSSMSicon },
-          { title: "PostgresQL", icon: postgresQL },
-          { title: "MongoDB", icon: mongoDbIcon },
-        ],
-        id: "databases",
-      },
-      OtherTools: {
-        data: [
-          { title: "Git", icon: gitIcon },
-          { title: "GraphQL", icon: graphQL },
-          { title: "Postman", icon: postmanIcon },
-        ],
-        id: "other tools",
-      },
-    },
-  });
-  const { currentTheme, UrlsPathnames, setUrlPathnames } = useThemeContext();
+  const content = useRef(SkillsData);
+  const { currentTheme } = useThemeContext();
   const [currentContent, setCurrentContent] = useState(
     content?.current?.frontend
   );
@@ -183,6 +111,7 @@ const Skills = () => {
                     <div className="animate-bounce">
                       <img
                         src={elements.icon}
+                        alt={elements?.title}
                         className="w-16 h-16 rounded-full bg-center bg-no-repeat border-2 border-white p-2 "
                       ></img>
                     </div>
@@ -206,6 +135,7 @@ const Skills = () => {
                           <div className="animate-bounce">
                             <img
                               src={elements.icon}
+                              alt={elements?.title}
                               className="w-16 h-16 rounded-full bg-center bg-no-repeat border-2 border-white p-2 "
                             ></img>
                           </div>
@@ -232,6 +162,7 @@ const Skills = () => {
                           <div className="animate-bounce">
                             <img
                               src={elements.icon}
+                              alt={elements?.title}
                               className="w-16 h-16 rounded-full bg-center bg-no-repeat border-2 border-white p-2 "
                             ></img>
                           </div>
@@ -259,6 +190,7 @@ const Skills = () => {
                             <div className="animate-bounce">
                               <img
                                 src={elements.icon}
+                                alt={elements?.title}
                                 className="w-16 h-16 rounded-full bg-center bg-no-repeat border-2 border-white p-2 "
                               ></img>
                             </div>

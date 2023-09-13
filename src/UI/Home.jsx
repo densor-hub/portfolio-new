@@ -5,6 +5,7 @@ import ThemeSelector from "../components/ThemeSelector";
 import CurvedArrow from "../components/CurvedArrow";
 import ImageContainer from "../components/ImageContainer";
 import Button from "../components/Button";
+import { PersolInfoData } from "../data/data";
 
 const NavBar = lazy(() => {
   return import("../components/Nav");
@@ -12,7 +13,7 @@ const NavBar = lazy(() => {
 
 const Intro = () => {
   const { currentTheme } = useThemeContext();
-  const profession = useRef(["Software Developer", "Musician"]);
+  const profession = useRef(PersolInfoData?.professions);
   const [iterator, setIterator] = useState(0);
 
   //toggling role or proffession
@@ -60,7 +61,7 @@ const Intro = () => {
                 <div>
                   <span style={{ color: currentTheme }}>Hello,</span> I'm{" "}
                 </div>
-                <div>David Ensor</div>
+                <div>{PersolInfoData.name}</div>
                 <div className="text-lg sm:text-2xl font-semibold pt-5">
                   I am a{" "}
                   <span style={{ color: currentTheme }}>
@@ -73,11 +74,7 @@ const Intro = () => {
                 ref={addToAnimatingRefs}
                 className="relative transition-transform left-[10vw] duration-700 "
               >
-                I am results-focused Full-stack developer with strength in both
-                Front-end and Back-end developments. I leverage my expertise,
-                resourcefulness and diligence to make positive impact. I pride
-                myself as a very innovative Software Engineer who shows much
-                appreciation for collective efforts.
+                {PersolInfoData?.overview}
               </p>
             </article>
 

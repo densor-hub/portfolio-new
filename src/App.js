@@ -15,7 +15,7 @@ const Projects = lazy(() => {
   return import("./UI/Projects");
 });
 
-const Resume = lazy(() => {
+const Journey = lazy(() => {
   return import("./UI/Journey");
 });
 
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
   { path: "/", Component: Root },
   { path: "skills", Component: Skills },
   { path: "projects", Component: Projects },
-  { path: "resume", Component: Resume },
+  { path: "resume", Component: Journey },
   { path: "contact", Component: Contact },
 ]);
 

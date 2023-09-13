@@ -7,7 +7,7 @@ import { ImLink } from "react-icons/im";
 import { Link } from "react-router-dom";
 import { journeyData } from "../data/data";
 
-const Resume = () => {
+const Journey = () => {
   const { currentTheme } = useThemeContext();
   const resumeContent = useRef(journeyData);
 
@@ -24,7 +24,7 @@ const Resume = () => {
     if (window?.innerWidth > 600) {
       setTimeout(() => {
         ExperienceContainerRefs?.current?.forEach((element, index) => {
-          if (index % 2 == 0) {
+          if (index % 2 === 0) {
             element.style.transform = "translateX(8vw)";
           } else {
             element.style.transform = "translateX(-8vw)";
@@ -130,6 +130,7 @@ const Resume = () => {
                           </div>
                           <img
                             src={elements?.icon}
+                            alt={elements?.company}
                             className="relative hidden md:block left-8 w-[60px] h-[60px] rounded-full  border-4"
                             style={{ borderColor: currentTheme }}
                           ></img>
@@ -152,6 +153,7 @@ const Resume = () => {
                         <section className="realtive md:relative flex flex-col md:flex-row w-[90%] md:w-[100%] pb-10  mx-auto  justify-between ">
                           <img
                             src={elements?.icon}
+                            alt={elements?.company}
                             className="hidden md:block relative right-8 w-[60px] h-[60px] rounded-full  border-4"
                             style={{ borderColor: currentTheme }}
                           ></img>
@@ -236,4 +238,4 @@ const Resume = () => {
   );
 };
 
-export default Resume;
+export default Journey;
