@@ -37,7 +37,6 @@ const Intro = () => {
   useEffect(() => {
     setTimeout(() => {
       AnimatingRefs?.current.forEach((element, index) => {
-        console.log(element);
         if (index % 2 == 0) {
           element.style.transform = "translateX(10vw)";
         } else {
@@ -46,6 +45,16 @@ const Intro = () => {
       });
     }, 10);
   }, []);
+
+  //Type name on screen
+  const [name, setName] = useState([]);
+  useEffect(() => {
+    setTimeout(() => {
+      if (PersolInfoData?.name?.length > name?.length) {
+        setName([...name, PersolInfoData?.name[name?.length]]);
+      }
+    }, 200);
+  }, [name.length]);
 
   return (
     <main className="flex min-h-screen bg-[#201f1f] text-white overflow-x-hidden">
@@ -61,7 +70,7 @@ const Intro = () => {
                 <div>
                   <span style={{ color: currentTheme }}>Hello,</span> I'm{" "}
                 </div>
-                <div>{PersolInfoData.name}</div>
+                <div>{name}</div>
                 <div className="text-lg sm:text-2xl font-semibold pt-5">
                   I am a{" "}
                   <span style={{ color: currentTheme }}>

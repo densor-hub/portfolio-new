@@ -7,41 +7,64 @@ import useThemeContext from "../hooks/useThemeContext";
 import { useLocation, Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
 
-const NavBar = () => {
+const NavBar = ({ PagenotFound }) => {
+  //pagenotfound comes from pageNotfound component in 404.jsx
   const { currentTheme, UrlsPathnames, setUrlPathnames } = useThemeContext();
   const location = useLocation();
 
   const style = {
-    inconContainer: `border-4 border-neutral-500 rounded-lg h-[50px] w-[50px] flex justify-center items-center`,
+    iconContainer: `border-4 border-neutral-500 rounded-lg h-[50px] w-[50px] flex justify-center items-center`,
     iconLabel: `text-xs  w-fit mx-auto`,
   };
 
-  const allowedURLS = useRef(["skills", "projects", "resume", "contact"]);
+  //---------setting URLS for nav color rendering-----------
 
-  //set URLS for nav color rendering
+  //initialize allowed URLs
+  const allowedURLS = useRef(["skills", "projects", "journey", "contact"]);
+
   useEffect(() => {
-    if (location?.pathname?.slice(1, location?.pathname?.length)) {
+    if (
+      allowedURLS?.current?.find((element) => {
+        return location?.pathname?.includes(element);
+      })
+    ) {
       setUrlPathnames(
         allowedURLS.current?.slice(
           0,
           allowedURLS.current?.indexOf(
-            location?.pathname?.slice(1, location?.pathname?.length)
+            allowedURLS?.current
+              ?.find((element) => {
+                return location?.pathname?.includes(element);
+              })
+              ?.toLowerCase()
           ) + 1
         )
       );
     } else {
+      //set the params array to [] make all nav components uncolored.
+      //home is coloured by default
       setUrlPathnames([]);
     }
-  }, [location?.pathname, setUrlPathnames]);
+  }, []);
 
   return (
     <main className="fixed z-10 h-full w-fit bg-[#201f1f]  flex justify-center items-center px-2 sm:px-8">
       <section>
         <Link to={"/"}>
-          <section style={{ color: `${currentTheme}` }}>
+          <section
+            style={
+              !PagenotFound
+                ? { color: `${currentTheme}` }
+                : { color: "#525252" }
+            }
+          >
             <div
-              className={style.inconContainer}
-              style={{ borderColor: `${currentTheme}` }}
+              className={style.iconContainer}
+              style={
+                !PagenotFound
+                  ? { borderColor: `${currentTheme}` }
+                  : { color: "#525252" }
+              }
             >
               <ImHome size={30}></ImHome>
             </div>
@@ -54,7 +77,7 @@ const NavBar = () => {
           style={
             UrlsPathnames?.find((e) => {
               return e?.toLowerCase() === "skills";
-            })
+            }) && !PagenotFound
               ? { backgroundColor: `${currentTheme}` }
               : { backgroundColor: "#525252" }
           }
@@ -66,17 +89,17 @@ const NavBar = () => {
             style={
               UrlsPathnames?.find((e) => {
                 return e?.toLowerCase() === "skills";
-              })
+              }) && !PagenotFound
                 ? { color: `${currentTheme}` }
                 : { color: "#525252" }
             }
           >
             <div
-              className={style.inconContainer}
+              className={style.iconContainer}
               style={
                 UrlsPathnames?.find((e) => {
                   return e?.toLowerCase() === "skills";
-                })
+                }) && !PagenotFound
                   ? { borderColor: `${currentTheme}` }
                   : {}
               }
@@ -92,7 +115,7 @@ const NavBar = () => {
           style={
             UrlsPathnames?.find((e) => {
               return e?.toLowerCase() === "projects";
-            })
+            }) && !PagenotFound
               ? { backgroundColor: `${currentTheme}` }
               : { backgroundColor: "#525252" }
           }
@@ -103,17 +126,17 @@ const NavBar = () => {
             style={
               UrlsPathnames?.find((e) => {
                 return e?.toLowerCase() === "projects";
-              })
+              }) && !PagenotFound
                 ? { color: `${currentTheme}` }
                 : { color: "#525252" }
             }
           >
             <div
-              className={style.inconContainer}
+              className={style.iconContainer}
               style={
                 UrlsPathnames?.find((e) => {
                   return e?.toLowerCase() === "projects";
-                })
+                }) && !PagenotFound
                   ? { borderColor: `${currentTheme}` }
                   : {}
               }
@@ -128,30 +151,30 @@ const NavBar = () => {
           className="w-1 h-[10vh] mx-auto"
           style={
             UrlsPathnames?.find((e) => {
-              return e?.toLowerCase() === "resume";
-            })
+              return e?.toLowerCase() === "journey";
+            }) && !PagenotFound
               ? { backgroundColor: `${currentTheme}` }
               : { backgroundColor: "#525252" }
           }
         ></div>
 
-        <Link to={"/resume"}>
+        <Link to={"/journey"}>
           {" "}
           <section
             style={
               UrlsPathnames?.find((e) => {
-                return e?.toLowerCase() === "resume";
-              })
+                return e?.toLowerCase() === "journey";
+              }) && !PagenotFound
                 ? { color: `${currentTheme}` }
                 : { color: "#525252" }
             }
           >
             <div
-              className={style.inconContainer}
+              className={style.iconContainer}
               style={
                 UrlsPathnames?.find((e) => {
-                  return e?.toLowerCase() === "resume";
-                })
+                  return e?.toLowerCase() === "journey";
+                }) && !PagenotFound
                   ? { borderColor: `${currentTheme}` }
                   : {}
               }
@@ -167,7 +190,7 @@ const NavBar = () => {
           style={
             UrlsPathnames?.find((e) => {
               return e?.toLowerCase() === "contact";
-            })
+            }) && !PagenotFound
               ? { backgroundColor: `${currentTheme}` }
               : { backgroundColor: "#525252" }
           }
@@ -178,17 +201,17 @@ const NavBar = () => {
             style={
               UrlsPathnames?.find((e) => {
                 return e?.toLowerCase() === "contact";
-              })
+              }) && !PagenotFound
                 ? { color: `${currentTheme}` }
                 : { color: "#525252" }
             }
           >
             <div
-              className={style.inconContainer}
+              className={style.iconContainer}
               style={
                 UrlsPathnames?.find((e) => {
                   return e?.toLowerCase() === "contact";
-                })
+                }) && !PagenotFound
                   ? { borderColor: `${currentTheme}` }
                   : {}
               }

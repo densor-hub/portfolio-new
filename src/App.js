@@ -23,12 +23,17 @@ const Contact = lazy(() => {
   return import("./UI/Contact");
 });
 
+const Page404 = lazy(() => {
+  return import("./UI/404");
+});
+
 const router = createBrowserRouter([
   { path: "/", Component: Root },
   { path: "skills", Component: Skills },
   { path: "projects", Component: Projects },
-  { path: "resume", Component: Journey },
+  { path: "journey", Component: Journey },
   { path: "contact", Component: Contact },
+  { path: "*", Component: Page404 },
 ]);
 
 const App = () => {

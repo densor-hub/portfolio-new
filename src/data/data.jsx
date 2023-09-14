@@ -101,6 +101,7 @@ export const SkillsData = {
 
 export const projectsData = [
   {
+    id: 1,
     name: "Muzic",
     url: "http://muzic.goldcoastuni.com",
     logo: MuzicLogo,
@@ -109,6 +110,7 @@ export const projectsData = [
       "Muzic is a web based wesite creator application for musicians ",
   },
   {
+    id: 2,
     name: "AbiBeck",
     url: "https://abibeck.xyz",
     logo: AbiBeckLogo,
@@ -117,6 +119,7 @@ export const projectsData = [
       "Very attractive modern day website for AbiBeck Software Solutions.",
   },
   {
+    id: 3,
     name: "Cynosure",
     url: "http://apps.abibeck.xyz/cynosure",
     logo: CynoSureLogo,
@@ -124,6 +127,7 @@ export const projectsData = [
     description: "An enterprise relations and data management sytem.",
   },
   {
+    id: 4,
     name: "Aabea Eng. Ltd.",
     url: "http://apps.abibeck.xyz/cynosure",
     logo: CynoSureLogo,

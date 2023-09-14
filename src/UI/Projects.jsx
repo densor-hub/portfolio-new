@@ -14,7 +14,7 @@ const Projects = () => {
   const [displayedProjects, setDisplayedProjects] = useState([]);
 
   const projectRefs = useRef([]);
-  const addToLiveProjectRefs = (elements) => {
+  const addProjectRefs = (elements) => {
     if (elements && !projectRefs?.current?.includes(elements)) {
       projectRefs?.current?.push(elements);
     }
@@ -33,18 +33,31 @@ const Projects = () => {
     };
   }, []);
 
-  const [render, setRender] = useState(true);
+  const [projectsLoaded, setProjectsLoaded] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       if (displayedProjects.length !== projects?.current?.length) {
-        setDisplayedProjects([
-          ...displayedProjects,
-          projects.current[displayedProjects.length],
-        ]);
+        if (!projectsLoaded) {
+          setDisplayedProjects([
+            ...displayedProjects,
+            projects.current[displayedProjects.length],
+          ]);
+        }
+      } else {
+        setProjectsLoaded(true);
       }
-      setRender(!render);
+
+      if (innerWidth > 1150) {
+        if (projectsLoaded) {
+          projectRefs.current.forEach((elements) => {
+            return (elements.style.transform = `translateX(${
+              innerWidth / projects?.current?.length - (3 / 100) * innerWidth
+            }px)`);
+          });
+        }
+      }
     }, 200);
-  }, [render]);
+  }, [displayedProjects.length, projectsLoaded]);
 
   return (
     <main className="flex  bg-[#201f1f]  text-white relative">
@@ -54,7 +67,7 @@ const Projects = () => {
           {displayedProjects?.map((elements, index) => {
             return (
               <main
-                ref={addToLiveProjectRefs}
+                ref={addProjectRefs}
                 key={index}
                 style={
                   innerWidth > 1150
@@ -63,11 +76,15 @@ const Projects = () => {
                           innerWidth / projects?.current?.length -
                           (3 / 100) * innerWidth
                         }px`,
+                        right: `${
+                          innerWidth / projects?.current?.length -
+                          (3 / 100) * innerWidth
+                        }px`,
                       }
                     : { width: "100%" }
                 }
                 className={
-                  "flex flex-wrap flex-col justify-center items-center"
+                  "flex flex-wrap flex-col justify-center items-center relative transition-transform duration-500"
                 }
               >
                 <div
@@ -101,7 +118,7 @@ const Projects = () => {
           })}
         </section>
         <div className="py-10">
-          <Button pathname={"/resume"} label={"Next"} />
+          <Button pathname={"/journey"} label={"Next"} />
           <Button pathname={"/skills"} label={"Back"} />
         </div>
       </section>
