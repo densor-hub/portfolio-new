@@ -8,7 +8,7 @@ const Page404 = () => {
   return (
     <main className="flex  min-h-screen bg-[#201f1f]">
       <NavBar PagenotFound={PagenotFound} />
-      <section className=" bg-[#0f0e0e]  w-full flex justify-center items-center">
+      <section className="min-h-screen bg-[#0f0e0e]  flex justify-center items-center w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px] ">
         <div style={{ color: currentTheme }}>
           <Emoji />
           <div className="text-[50px] font-bold text-center">404</div>

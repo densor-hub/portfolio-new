@@ -45,7 +45,7 @@ const NavBar = ({ PagenotFound }) => {
       //home is coloured by default
       setUrlPathnames([]);
     }
-  }, []);
+  }, [location?.pathname, setUrlPathnames]);
 
   return (
     <main className="fixed z-10 h-full w-fit bg-[#201f1f]  flex justify-center items-center px-2 sm:px-8">

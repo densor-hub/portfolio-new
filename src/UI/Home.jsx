@@ -37,7 +37,7 @@ const Intro = () => {
   useEffect(() => {
     setTimeout(() => {
       AnimatingRefs?.current.forEach((element, index) => {
-        if (index % 2 == 0) {
+        if (index % 2 === 0) {
           element.style.transform = "translateX(10vw)";
         } else {
           element.style.transform = "translateX(-10vw)";
@@ -54,7 +54,7 @@ const Intro = () => {
         setName([...name, PersolInfoData?.name[name?.length]]);
       }
     }, 200);
-  }, [name.length]);
+  }, [name]);
 
   return (
     <main className="flex min-h-screen bg-[#201f1f] text-white overflow-x-hidden">

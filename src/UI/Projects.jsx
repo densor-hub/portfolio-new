@@ -57,7 +57,7 @@ const Projects = () => {
         }
       }
     }, 200);
-  }, [displayedProjects.length, projectsLoaded]);
+  }, [displayedProjects, projectsLoaded, innerWidth]);
 
   return (
     <main className="flex  bg-[#201f1f]  text-white relative">
@@ -96,6 +96,7 @@ const Projects = () => {
                   </div>
                   <img
                     src={elements?.logo}
+                    alt=""
                     className="w-[50%] rounded-full mx-auto p-2 border-2 border-white"
                   ></img>
                   <div className="border-0 p-4 text-center">
@@ -106,6 +107,7 @@ const Projects = () => {
                     <a
                       href={elements?.url}
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: currentTheme }}
                       className="underline"
                     >
