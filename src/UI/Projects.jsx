@@ -2,6 +2,7 @@ import { lazy, useEffect, useRef, useState } from "react";
 import useThemeContext from "../hooks/useThemeContext";
 import Button from "../components/Button";
 import { projectsData } from "../data/data";
+import { Link } from "react-router-dom";
 
 const NavBar = lazy(() => {
   return import("../components/Nav");
@@ -74,11 +75,11 @@ const Projects = () => {
                     ? {
                         width: `${
                           innerWidth / projects?.current?.length -
-                          (3 / 100) * innerWidth
+                          (5 / 100) * innerWidth
                         }px`,
                         right: `${
                           innerWidth / projects?.current?.length -
-                          (3 / 100) * innerWidth
+                          (5 / 100) * innerWidth
                         }px`,
                       }
                     : { width: "100%" }
@@ -97,22 +98,40 @@ const Projects = () => {
                   <img
                     src={elements?.logo}
                     alt=""
-                    className="w-[50%] rounded-full mx-auto p-2 border-2 border-white"
+                    className="w-[120px] h-[120px] rounded-full mx-auto p-2 border-2 border-white"
                   ></img>
                   <div className="border-0 p-4 text-center">
                     {elements?.description}
                   </div>
 
                   <div className="text-center">
-                    <a
-                      href={elements?.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      style={{ color: currentTheme }}
-                      className="underline"
-                    >
-                      <i>Visit {elements?.name} here</i>
-                    </a>
+                    {elements?.url !== "" ? (
+                      <a
+                        href={elements?.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{ color: currentTheme }}
+                        className="underline"
+                      >
+                        <i>
+                          Visit{" "}
+                          {elements?.urlText
+                            ? elements?.urlText
+                            : elements?.name}{" "}
+                          here
+                        </i>
+                      </a>
+                    ) : (
+                      elements?.contact && (
+                        <Link
+                          to={`/${elements?.contact}`}
+                          className="italic underline"
+                          style={{ color: currentTheme }}
+                        >
+                          Contact me for Cynosure
+                        </Link>
+                      )
+                    )}
                   </div>
                 </div>
               </main>

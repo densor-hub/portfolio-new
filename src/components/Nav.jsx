@@ -48,8 +48,8 @@ const NavBar = ({ PagenotFound }) => {
   }, [location?.pathname, setUrlPathnames]);
 
   return (
-    <main className="fixed z-10 h-full w-fit bg-[#201f1f]  flex justify-center items-center px-2 sm:px-8">
-      <section>
+    <main className="fixed z-10 h-full w-fit bg-[#201f1f]  flex justify-center items-center px-2 sm:px-8 min-h-[580px] ">
+      <section className="min-h-[580px]">
         <Link to={"/"}>
           <section
             style={

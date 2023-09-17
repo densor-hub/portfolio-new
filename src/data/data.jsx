@@ -2,7 +2,7 @@
 import PersolIcon from "../images/persol-icon.jpg";
 import AngloGoldIcon2 from "../images/anglogold-icon.png";
 import AbibeckIcon from "../images/abibeck logo.jpg";
-import AsabeaIcon from "../images/cynosure.png";
+import AsabeaIcon from "../images/ASABEA-USE.png";
 
 //Projects
 import MuzicLogo from "../images/muzica.jpg";
@@ -44,7 +44,7 @@ export const PersolInfoData = {
   name: "David Ensor",
   professions: ["Software Developer", "Musician"],
   overview:
-    "I am results-focused Full-stack developer with strength in both Front-end and Back-end developments. I leverage my expertise, resourcefulness and diligence to make positive impact. I pride myself as a very innovative Software Engineer who shows much appreciation for collective efforts.",
+    "I am results-focused Software Developer with strength in both Web and Mobile developments. I leverage my expertise, resourcefulness and diligence to make positive impact. I pride myself as a very innovative developer who shows much appreciation for collective efforts.",
 };
 
 export const SkillsData = {
@@ -101,13 +101,14 @@ export const SkillsData = {
 
 export const projectsData = [
   {
-    id: 1,
-    name: "Muzic",
+    id: 4,
+    name: "MUZIC",
     url: "http://muzic.goldcoastuni.com",
+    urlText: "my website created with MUZIC",
     logo: MuzicLogo,
-    technologies: ["React JS", "Node JS", "MongoDB", "CSS", "GraphQL"],
+    technologies: ["React JS", "Tailwind CSS", "MSSMS", "SQL", "GraphQL"],
     description:
-      "Muzic is a web based wesite creator application for musicians ",
+      "Muzic is a web-based website creator application tailored for musicains",
   },
   {
     id: 2,
@@ -116,24 +117,16 @@ export const projectsData = [
     logo: AbiBeckLogo,
     technologies: ["React JS", "Tailwind CSS"],
     description:
-      "Very attractive modern day website for AbiBeck Software Solutions.",
+      "Designed modern day landing page for AbiBeck Software Solutions.",
   },
   {
     id: 3,
     name: "Cynosure",
-    url: "http://apps.abibeck.xyz/cynosure",
+    url: "",
+    contact: "contact",
     logo: CynoSureLogo,
     technologies: ["React JS", "Tailwind CSS", "MSSMS", "SQL", "GraphQL"],
     description: "An enterprise relations and data management sytem.",
-  },
-  {
-    id: 4,
-    name: "Aabea Eng. Ltd.",
-    url: "http://apps.abibeck.xyz/cynosure",
-    logo: CynoSureLogo,
-    technologies: ["React JS", "Tailwind CSS", "MSSMS", "SQL", "GraphQL"],
-    description:
-      "A modern day website and organizational management application for Asabea Engineering Limited.",
   },
 ];
 
@@ -174,9 +167,7 @@ export const journeyData = [
       start: "Sept 2020 ",
       end: "July 2021",
     },
-    activities: [
-      "Participated in the development of the AAIL Canteen App as a fullstack developer",
-    ],
+    activities: ["A fullstatck developer on the team for AAIL Canteen App."],
     icon: AngloGoldIcon2,
     url: "https://www.anglogoldashanti.com/portfolio/africa/iduapriem/",
   },

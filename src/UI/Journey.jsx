@@ -35,9 +35,9 @@ const Journey = () => {
       setTimeout(() => {
         ExperienceContainerRefs?.current?.forEach((element, index) => {
           if (index % 2 !== 0) {
-            element.style.transform = "translateX(8vw)";
+            element.style.transform = "translateX(5vw)";
           } else {
-            element.style.transform = "translateX(-8vw)";
+            element.style.transform = "translateX(-5vw)";
           }
         });
       }, 10);
