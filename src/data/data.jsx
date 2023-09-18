@@ -156,6 +156,7 @@ export const journeyData = [
       "Built the landing page  of Abibeck Software Solutions.",
       "Spearheaded the development of Cynosure,  an enterprize  relations , data management and point of sale application.",
       "Worked as a fullstack developer on Muzic project, a website creator for musicians, tailored for a client.",
+      "Worked as a mobile developer on Muzic project to create a cross platform mobile app version of Muzic.",
     ],
     icon: AbibeckIcon,
     url: "https://abibeck.xyz",
