@@ -139,15 +139,14 @@ export const journeyData = [
       end: "Present",
     },
     activities: [
-      "Work as the front end  developer on BOST ONE system for National Petroleum Authority (NPA) of Ghana",
-      "Work as a front end develper on the team for Enterprise Relations and Data Management System for National Petroleum Authority",
+      "Engineered the front-end development of BOST ONE system for National Petroleum Authority by creating highly interactive and highly performant user interfaces using React JS and Boostrap CSS.",
     ],
     icon: PersolIcon,
     url: "https://persol.net",
   },
   {
     company: "AbiBeck Software Solutions",
-    role: "Full Stack Developer",
+    role: "Web and Mobile Developer",
     duration: {
       start: "Sept 2021 ",
       end: "June 2023",
