@@ -103,12 +103,11 @@ export const projectsData = [
   {
     id: 4,
     name: "MUZIC",
-    url: "http://muzic.goldcoastuni.com",
+    url: "https://muzic.fly.dev/home?a=nana-essel-deeg",
     urlText: "my website created with MUZIC",
     logo: MuzicLogo,
     technologies: ["React JS", "Tailwind CSS", "MSSMS", "SQL", "GraphQL"],
-    description:
-      "Muzic is a web-based website creator application tailored for musicains",
+    description: "Muzic is a website creator app tailored for musicains",
   },
   {
     id: 2,
