@@ -138,7 +138,7 @@ export const journeyData = [
       end: "Present",
     },
     activities: [
-      "Engineered the front-end development of BOST ONE system for National Petroleum Authority by creating highly interactive and highly performant user interfaces using React JS and Boostrap CSS.",
+      "Engineered the front-end of BOST ONE system for National Petroleum Authority of Ghana by creating highly interactive and highly functional and optimized user interfaces.",
     ],
     icon: PersolIcon,
     url: "https://persol.net",
@@ -151,7 +151,7 @@ export const journeyData = [
       end: "June 2023",
     },
     activities: [
-      "Built the landing page  of Abibeck Software Solutions.",
+      "Built the visually appealing landing page  of Abibeck Software Solutions.",
       "Spearheaded the development of Cynosure,  an enterprize  relations , data management and point of sale application.",
       "Worked as a fullstack developer on Muzic project, a website creator for musicians, tailored for a client.",
       "Worked as a mobile developer on Muzic project to create a cross platform mobile app version of Muzic.",
@@ -166,7 +166,10 @@ export const journeyData = [
       start: "Sept 2020 ",
       end: "July 2021",
     },
-    activities: ["A fullstatck developer on the team for AAIL Canteen App."],
+    activities: [
+      "A fullstatck developer on the team for AAIL Canteen App.",
+      "Daily designed canteen menu that were displayed on the canteen screens",
+    ],
     icon: AngloGoldIcon2,
     url: "https://www.anglogoldashanti.com/portfolio/africa/iduapriem/",
   },
@@ -179,7 +182,7 @@ export const journeyData = [
     },
     activities: [
       "Designed and built a website for the company",
-      "Built an enterpise relations and data management application for the company",
+      "Built enterprise management application for managing employees, assets, stocks, inventory and  purchases which drastically reduced loss of resources and kept all employees under systematic checks to safeguard the organization's assets and resources.",
     ],
     icon: AsabeaIcon,
     url: "https://asabea-el.com",
