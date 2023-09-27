@@ -167,7 +167,8 @@ export const journeyData = [
       end: "July 2021",
     },
     activities: [
-      "A fullstatck developer on the team for AAIL Canteen App.",
+      "Was a front-end developer on HR Employee Rating System.",
+      "Was a full-stack developer on AngloGold Ashanti Iduapriem Limited Canteen App.",
       "Daily designed canteen menu that were displayed on the canteen screens",
     ],
     icon: AngloGoldIcon2,
@@ -186,5 +187,19 @@ export const journeyData = [
     ],
     icon: AsabeaIcon,
     url: "https://asabea-el.com",
+  },
+  {
+    company: "Intership",
+    role: "AbiBeck Software Solutions",
+    duration: {
+      start: "May 2018",
+      end: "August 2019",
+    },
+    activities: [
+      "Designed and built a website for the company",
+      "Built enterprise management application for managing employees, assets, stocks, inventory and  purchases which drastically reduced loss of resources and kept all employees under systematic checks to safeguard the organization's assets and resources.",
+    ],
+    icon: AbiBeckLogo,
+    url: "https://abibeck.xyz",
   },
 ];
