@@ -193,11 +193,12 @@ export const journeyData = [
     role: "AbiBeck Software Solutions",
     duration: {
       start: "May 2018",
-      end: "August 2019",
+      end: "August 2018",
     },
     activities: [
-      "Designed and built a website for the company",
-      "Built enterprise management application for managing employees, assets, stocks, inventory and  purchases which drastically reduced loss of resources and kept all employees under systematic checks to safeguard the organization's assets and resources.",
+      "Learnt and utilized tools and technologies including but not limited to HTML, CSS, and JavaScript",
+      "Learnt and utilized MSSQL for database management",
+      "Learnt and utilized Git for version control",
     ],
     icon: AbiBeckLogo,
     url: "https://abibeck.xyz",
