@@ -48,14 +48,18 @@ const Projects = () => {
         setProjectsLoaded(true);
       }
 
-      if (innerWidth > 1150) {
-        if (projectsLoaded) {
-          projectRefs.current.forEach((elements) => {
+      if (projectsLoaded) {
+        projectRefs.current.forEach((elements) => {
+          if (innerWidth > 560) {
             return (elements.style.transform = `translateX(${
-              innerWidth / projects?.current?.length - (3 / 100) * innerWidth
+              innerWidth / projects?.current?.length - (10 / 100) * innerWidth
             }px)`);
-          });
-        }
+          } else {
+            return (elements.style.transform = `translateX(${
+              innerWidth / projects?.current?.length - (30 / 100) * innerWidth
+            }px)`);
+          }
+        });
       }
     }, 200);
   }, [displayedProjects, projectsLoaded, innerWidth]);
@@ -64,25 +68,27 @@ const Projects = () => {
     <main className="flex  bg-[#201f1f]  text-white relative">
       <NavBar />
       <section className=" h-full min-h-screen bg-[#0f0e0e] flex flex-col  justify-center items-center max-w-screen overflow-x-hidden w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px] ">
-        <section className="w-full grid grid-cols-1 md:grid-cols-2 xl:flex flex-wrap min-w-screen h-fit relative">
+        <section className="w-full grid grid-cols-1 xl:flex flex-wrap min-w-screen h-fit relative justify-center items-center text-center">
           {displayedProjects?.map((elements, index) => {
             return (
               <main
                 ref={addProjectRefs}
                 key={index}
                 style={
-                  innerWidth > 1150
+                  innerWidth > 1280
                     ? {
                         width: `${
                           innerWidth / projects?.current?.length -
-                          (5 / 100) * innerWidth
+                          (10 / 100) * innerWidth
                         }px`,
                         right: `${
                           innerWidth / projects?.current?.length -
-                          (5 / 100) * innerWidth
+                          (10 / 100) * innerWidth
                         }px`,
                       }
-                    : { width: "100%" }
+                    : innerWidth > 560
+                    ? { width: "50%" }
+                    : {}
                 }
                 className={
                   "flex flex-wrap flex-col justify-center items-center relative transition-transform duration-500"
