@@ -189,8 +189,8 @@ export const journeyData = [
     url: "https://asabea-el.com",
   },
   {
-    company: "Intership",
-    role: "AbiBeck Software Solutions",
+    company: "AbiBeck Software Solutions",
+    role: "Intership",
     duration: {
       start: "May 2018",
       end: "August 2018",
