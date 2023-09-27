@@ -138,7 +138,7 @@ export const journeyData = [
       end: "Present",
     },
     activities: [
-      "Engineered the front-end of BOST ONE system for National Petroleum Authority of Ghana by creating highly interactive and highly functional and optimized user interfaces.",
+      "Engineered the front-end of BOST ONE system for National Petroleum Authority of Ghana by creating highly interactive, highly functional and optimized user interfaces.",
     ],
     icon: PersolIcon,
     url: "https://persol.net",
@@ -151,10 +151,10 @@ export const journeyData = [
       end: "June 2023",
     },
     activities: [
-      "Built the visually appealing landing page  of Abibeck Software Solutions.",
+      "Built visually appealing landing page  of Abibeck Software Solutions.",
       "Spearheaded the development of Cynosure,  an enterprize  relations , data management and point of sale application.",
       "Worked as a fullstack developer on Muzic project, a website creator for musicians, tailored for a client.",
-      "Worked as a mobile developer on Muzic project to create a cross platform mobile app version of Muzic.",
+      "Developed a cross platform mobile version of Muzic.",
     ],
     icon: AbibeckIcon,
     url: "https://abibeck.xyz",
