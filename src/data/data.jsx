@@ -138,7 +138,8 @@ export const journeyData = [
       end: "Present",
     },
     activities: [
-      "Engineered the front-end of BOST ONE system for National Petroleum Authority of Ghana by creating highly interactive, highly functional and optimized user interfaces.",
+      "Resolved bugs and improved upon the performances of UI of existing Enterprise Relations and Data Management System resulting in 40% reduction of application load time.",
+      "Engineered the front-end of BOST ONE system, a crucial component of the Enterprise Management Application tailored for National Petroleum Authority of Ghana.",
     ],
     icon: PersolIcon,
     url: "https://persol.net",

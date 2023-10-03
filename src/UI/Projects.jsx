@@ -75,7 +75,7 @@ const Projects = () => {
                 ref={addProjectRefs}
                 key={index}
                 style={
-                  innerWidth > 1280
+                  innerWidth >= 1280
                     ? {
                         width: `${
                           innerWidth / projects?.current?.length -
