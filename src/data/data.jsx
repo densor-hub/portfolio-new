@@ -146,7 +146,7 @@ export const journeyData = [
   },
   {
     company: "AbiBeck Software Solutions",
-    role: "Web and Mobile Developer",
+    role: "Fullstack Developer",
     duration: {
       start: "Sept 2021 ",
       end: "June 2023",
@@ -155,7 +155,6 @@ export const journeyData = [
       "Built visually appealing landing page  of Abibeck Software Solutions.",
       "Spearheaded the development of Cynosure,  an enterprize  relations , data management and point of sale application.",
       "Worked as a fullstack developer on Muzic project, a website creator for musicians, tailored for a client.",
-      "Developed a cross platform mobile version of Muzic.",
     ],
     icon: AbibeckIcon,
     url: "https://abibeck.xyz",
@@ -177,7 +176,7 @@ export const journeyData = [
   },
   {
     company: "Asabea Engineering Limited",
-    role: "Interim Software Developer",
+    role: "Web Developer",
     duration: {
       start: "May 2019 ",
       end: "August 2019",
@@ -191,7 +190,7 @@ export const journeyData = [
   },
   {
     company: "AbiBeck Software Solutions",
-    role: "Intership",
+    role: "Web Developer Intern",
     duration: {
       start: "May 2018",
       end: "August 2018",
