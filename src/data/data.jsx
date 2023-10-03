@@ -44,7 +44,7 @@ export const PersolInfoData = {
   name: "David Ensor",
   professions: ["Software Developer", "Musician"],
   overview:
-    "I am results-focused Software Developer with strength in both Web and Mobile developments. I leverage my expertise, resourcefulness and diligence to make positive impact. I pride myself as a very innovative developer who shows much appreciation for collective efforts.",
+    "Highly skilled full-stack developer with strength in both frontend and backend developments. Proven ability to work independently and as part of a team to deliver high-quality products on time and within budget.",
 };
 
 export const SkillsData = {
