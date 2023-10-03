@@ -50,7 +50,7 @@ const Projects = () => {
 
       if (projectsLoaded) {
         projectRefs.current.forEach((elements) => {
-          if (innerWidth > 560) {
+          if (innerWidth > 1100) {
             return (elements.style.transform = `translateX(${
               innerWidth / projects?.current?.length - (10 / 100) * innerWidth
             }px)`);
@@ -68,14 +68,14 @@ const Projects = () => {
     <main className="flex  bg-[#201f1f]  text-white relative">
       <NavBar />
       <section className=" h-full min-h-screen bg-[#0f0e0e] flex flex-col  justify-center items-center max-w-screen overflow-x-hidden w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px] ">
-        <section className="w-full grid grid-cols-1 xl:flex flex-wrap min-w-screen h-fit relative justify-center items-center text-center">
+        <section className=" w-fit  md:w-full grid grid-cols-1 md:flex h-fit relative justify-center items-center text-center">
           {displayedProjects?.map((elements, index) => {
             return (
               <main
                 ref={addProjectRefs}
                 key={index}
                 style={
-                  innerWidth >= 1280
+                  innerWidth >= 1090
                     ? {
                         width: `${
                           innerWidth / projects?.current?.length -
@@ -95,7 +95,7 @@ const Projects = () => {
                 }
               >
                 <div
-                  className="w-[250px] h-[350px] my-5 border-4 rounded-xl"
+                  className="w-[215px] h-[370px] my-5 border-4 rounded-xl"
                   style={{ borderColor: currentTheme }}
                 >
                   <div className="font-bold py-4 text-center">
