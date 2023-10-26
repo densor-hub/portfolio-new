@@ -42,7 +42,11 @@ import graphQL from "../images/graphql.jpg";
 export const PersolInfoData = {
   img: DavidEnsor,
   name: "David Ensor",
-  professions: ["Software Developer", "Musician"],
+  professions: [
+    "Frontend developer",
+    "Backend developer",
+    "Fullstack developer",
+  ],
   overview:
     "Highly skilled full-stack developer with strength in both frontend and backend developments. Proven ability to work independently and as part of a team to deliver high-quality products on time and within budget.",
 };
