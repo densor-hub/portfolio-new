@@ -1,6 +1,5 @@
 import { lazy, useState, useEffect, useRef } from "react";
 import useThemeContext from "../hooks/useThemeContext";
-import image from "../images/david-ensor.jpg";
 import ThemeSelector from "../components/ThemeSelector";
 import CurvedArrow from "../components/CurvedArrow";
 import ImageContainer from "../components/ImageContainer";
@@ -13,20 +12,6 @@ const NavBar = lazy(() => {
 
 const Intro = () => {
   const { currentTheme } = useThemeContext();
-  const profession = useRef(PersolInfoData?.professions);
-  const [iterator, setIterator] = useState(0);
-
-  //toggling role or proffession
-  useEffect(() => {
-    setTimeout(() => {
-      if (iterator < profession?.current?.length - 1) {
-        setIterator(iterator + 1);
-      } else {
-        setIterator(0);
-      }
-    }, 2000);
-  }, [iterator]);
-
   //animate rendering of pae content
   const AnimatingRefs = useRef([]);
   const addToAnimatingRefs = (element) => {
@@ -56,6 +41,35 @@ const Intro = () => {
     }, 200);
   }, [name]);
 
+  //Type profession on screen
+  const [iterator, setIterator] = useState(0);
+  const [currentProfession, setcurrentProfession] = useState(
+    PersolInfoData.professions[0][0]
+  );
+  useEffect(() => {
+    setTimeout(() => {
+      if (iterator < PersolInfoData.professions.length) {
+        if (
+          PersolInfoData.professions[iterator].length >
+          currentProfession?.length
+        ) {
+          setcurrentProfession(
+            currentProfession +
+              PersolInfoData.professions[iterator][currentProfession?.length]
+          );
+        } else {
+          setIterator((p) => {
+            return p + 1;
+          });
+          setcurrentProfession("");
+        }
+      } else {
+        setIterator(0);
+        setcurrentProfession("");
+      }
+    }, 200);
+  }, [iterator, currentProfession]);
+
   return (
     <main className="flex min-h-screen bg-[#201f1f] text-white overflow-x-hidden">
       <NavBar />
@@ -74,7 +88,7 @@ const Intro = () => {
                 <div className="text-lg sm:text-2xl font-semibold pt-5">
                   I am a{" "}
                   <span style={{ color: currentTheme }}>
-                    {profession.current[iterator]}
+                    {currentProfession}
                   </span>
                 </div>
               </header>
@@ -112,7 +126,7 @@ const Intro = () => {
 
           {/* //Note that image is already animated in image container */}
           <div className="w-full   h-[240px] sm:h-full">
-            <ImageContainer image={image}></ImageContainer>
+            <ImageContainer image={PersolInfoData.img}></ImageContainer>
           </div>
         </section>
       </section>
