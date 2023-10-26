@@ -50,7 +50,7 @@ const Journey = () => {
       <section className="relative  min-h-screen bg-[#0f0e0e] w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)]  left-[69px] sm:left-[116px] overflow-x-hidden">
         <div className="pt-10 text-center pb-10">
           <div className="text-sm text-slate-400">
-            {Number(DateGetter?.getFullYear()) - Number(2019)}+ YEARS
+            {Number(DateGetter?.getFullYear()) - Number(2018)}+ YEARS
             PROFESSIONAL EXPERIENCE
           </div>
           <div className="text-3xl font-bold" style={{ color: currentTheme }}>
