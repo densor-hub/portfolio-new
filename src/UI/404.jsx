@@ -1,26 +1,20 @@
 import useThemeContext from "../hooks/useThemeContext";
-import NavBar from "../components/Nav";
-import { useRef } from "react";
 const Page404 = () => {
   const { currentTheme } = useThemeContext();
-  const PagenotFound = useRef(false);
 
   return (
-    <main className="flex  min-h-screen bg-[#201f1f]">
-      <NavBar PagenotFound={PagenotFound} />
-      <section className="min-h-screen bg-[#0f0e0e]  flex justify-center items-center w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px] ">
-        <div style={{ color: currentTheme }}>
-          <Emoji />
-          <div className="text-[50px] font-bold text-center">404</div>
-          <div className="text-sm italic text-center">
-            <div>Page not found, it seems you entered a wrong url</div>
-            <div className="text-white">
-              Please navigate with the pannel on the right end
-            </div>
+    <section className="min-h-screen bg-[#0f0e0e]  flex justify-center items-center w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px] ">
+      <div style={{ color: currentTheme }}>
+        <Emoji />
+        <div className="text-[50px] font-bold text-center">404</div>
+        <div className="text-sm italic text-center">
+          <div>Page not found, it seems you entered a wrong url</div>
+          <div className="text-white">
+            Please navigate with the pannel on the right end
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 };
 

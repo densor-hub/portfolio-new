@@ -1,12 +1,8 @@
-import { lazy, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useThemeContext from "../hooks/useThemeContext";
 import Button from "../components/Button";
 import { projectsData } from "../data/data";
 import { Link } from "react-router-dom";
-
-const NavBar = lazy(() => {
-  return import("../components/Nav");
-});
 
 const Projects = () => {
   const { currentTheme } = useThemeContext();
@@ -65,91 +61,86 @@ const Projects = () => {
   }, [displayedProjects, projectsLoaded, innerWidth]);
 
   return (
-    <main className="flex  bg-[#201f1f]  text-white relative">
-      <NavBar />
-      <section className=" h-full min-h-screen bg-[#0f0e0e] flex flex-col  justify-center items-center max-w-screen overflow-x-hidden w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px] ">
-        <section className=" w-fit  md:w-full grid grid-cols-1 md:flex h-fit relative justify-center items-center text-center">
-          {displayedProjects?.map((elements, index) => {
-            return (
-              <main
-                ref={addProjectRefs}
-                key={index}
-                style={
-                  innerWidth >= 1090
-                    ? {
-                        width: `${
-                          innerWidth / projects?.current?.length -
-                          (10 / 100) * innerWidth
-                        }px`,
-                        right: `${
-                          innerWidth / projects?.current?.length -
-                          (10 / 100) * innerWidth
-                        }px`,
-                      }
-                    : innerWidth > 560
-                    ? { width: "50%" }
-                    : {}
-                }
-                className={
-                  "flex flex-wrap flex-col justify-center items-center relative transition-transform duration-500"
-                }
+    <section className=" h-full min-h-screen bg-[#0f0e0e] flex flex-col  justify-center items-center max-w-screen overflow-x-hidden w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px] ">
+      <section className=" w-fit  md:w-full grid grid-cols-1 md:flex h-fit relative justify-center items-center text-center">
+        {displayedProjects?.map((elements, index) => {
+          return (
+            <main
+              ref={addProjectRefs}
+              key={index}
+              style={
+                innerWidth >= 1090
+                  ? {
+                      width: `${
+                        innerWidth / projects?.current?.length -
+                        (10 / 100) * innerWidth
+                      }px`,
+                      right: `${
+                        innerWidth / projects?.current?.length -
+                        (10 / 100) * innerWidth
+                      }px`,
+                    }
+                  : innerWidth > 560
+                  ? { width: "50%" }
+                  : {}
+              }
+              className={
+                "flex flex-wrap flex-col justify-center items-center relative transition-transform duration-500"
+              }
+            >
+              <div
+                className="w-[215px] h-[370px] my-5 border-4 rounded-xl"
+                style={{ borderColor: currentTheme }}
               >
-                <div
-                  className="w-[215px] h-[370px] my-5 border-4 rounded-xl"
-                  style={{ borderColor: currentTheme }}
-                >
-                  <div className="font-bold py-4 text-center">
-                    {elements?.name}
-                  </div>
-                  <img
-                    src={elements?.logo}
-                    alt=""
-                    className="w-[120px] h-[120px] rounded-full mx-auto p-2 border-2 border-white"
-                  ></img>
-                  <div className="border-0 p-4 text-center">
-                    {elements?.description}
-                  </div>
-
-                  <div className="text-center">
-                    {elements?.url !== "" ? (
-                      <a
-                        href={elements?.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        style={{ color: currentTheme }}
-                        className="underline"
-                      >
-                        <i>
-                          Visit{" "}
-                          {elements?.urlText
-                            ? elements?.urlText
-                            : elements?.name}{" "}
-                          here
-                        </i>
-                      </a>
-                    ) : (
-                      elements?.contact && (
-                        <Link
-                          to={`/${elements?.contact}`}
-                          className="italic underline"
-                          style={{ color: currentTheme }}
-                        >
-                          Contact me for Cynosure
-                        </Link>
-                      )
-                    )}
-                  </div>
+                <div className="font-bold py-4 text-center">
+                  {elements?.name}
                 </div>
-              </main>
-            );
-          })}
-        </section>
-        <div className="py-10">
-          <Button pathname={"/journey"} label={"Next"} />
-          <Button pathname={"/skills"} label={"Back"} />
-        </div>
+                <img
+                  src={elements?.logo}
+                  alt=""
+                  className="w-[120px] h-[120px] rounded-full mx-auto p-2 border-2 border-white"
+                ></img>
+                <div className="border-0 p-4 text-center">
+                  {elements?.description}
+                </div>
+
+                <div className="text-center">
+                  {elements?.url !== "" ? (
+                    <a
+                      href={elements?.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ color: currentTheme }}
+                      className="underline"
+                    >
+                      <i>
+                        Visit{" "}
+                        {elements?.urlText ? elements?.urlText : elements?.name}{" "}
+                        here
+                      </i>
+                    </a>
+                  ) : (
+                    elements?.contact && (
+                      <Link
+                        to={`/${elements?.contact}`}
+                        className="italic underline"
+                        style={{ color: currentTheme }}
+                      >
+                        Contact me for Cynosure
+                      </Link>
+                    )
+                  )}
+                </div>
+              </div>
+            </main>
+          );
+        })}
       </section>
-    </main>
+      <div className="py-10">
+        <Button pathname={"/journey"} label={"Next"} />
+        <Button pathname={"/skills"} label={"Back"} />
+      </div>
+    </section>
   );
 };
 

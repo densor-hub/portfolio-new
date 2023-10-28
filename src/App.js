@@ -4,7 +4,12 @@ import { ThemeContextProvider } from "./context/themeColorsContext";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Loading from "./UI/Loading";
-const Root = lazy(() => {
+
+const LandingPage = lazy(() => {
+  return import("./UI/LandingPage");
+});
+
+const Home = lazy(() => {
   return import("./UI/Home");
 });
 const Skills = lazy(() => {
@@ -28,12 +33,18 @@ const Page404 = lazy(() => {
 });
 
 const router = createBrowserRouter([
-  { path: "/", Component: Root },
-  { path: "skills", Component: Skills },
-  { path: "projects", Component: Projects },
-  { path: "journey", Component: Journey },
-  { path: "contact", Component: Contact },
-  { path: "*", Component: Page404 },
+  {
+    path: "/",
+    Component: LandingPage,
+    children: [
+      { path: "/", Component: Home },
+      { path: "skills", Component: Skills },
+      { path: "projects", Component: Projects },
+      { path: "journey", Component: Journey },
+      { path: "contact", Component: Contact },
+      { path: "*", Component: Page404 },
+    ],
+  },
 ]);
 
 const App = () => {
