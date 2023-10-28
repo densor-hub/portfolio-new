@@ -1,6 +1,8 @@
-import useThemeContext from "../hooks/useThemeContext";
+import useThemeContext from "../hooks/useThemeContext.ts";
+import React from "react";
+import { iThemeContext } from "../interfaces";
 const Page404 = () => {
-  const { currentTheme } = useThemeContext();
+  const { currentTheme }: iThemeContext = useThemeContext();
 
   return (
     <section className="min-h-screen bg-[#0f0e0e]  flex justify-center items-center w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px] ">
@@ -21,7 +23,7 @@ const Page404 = () => {
 export default Page404;
 
 const Emoji = () => {
-  const { currentTheme } = useThemeContext();
+  const { currentTheme }: iThemeContext = useThemeContext();
   return (
     <main className=" animate-bounce w-fit mx-auto">
       <div

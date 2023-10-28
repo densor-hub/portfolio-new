@@ -1,3 +1,4 @@
+import React from "react";
 const CurvedArrow = () => {
   return (
     <main className="w-[300px] h-[170px] rounded-[50%] bg-transparent boreder-0 border-r-4   border-b-4 border-slate-500 relative">

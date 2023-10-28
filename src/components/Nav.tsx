@@ -3,13 +3,22 @@ import { FaCode } from "react-icons/fa";
 import { BsBriefcaseFill } from "react-icons/bs";
 import { GiArchiveResearch } from "react-icons/gi";
 import { BiSolidPhone } from "react-icons/bi";
-import useThemeContext from "../hooks/useThemeContext";
+import useThemeContext from "../hooks/useThemeContext.ts";
 import { useLocation, Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
+import { iThemeContext } from "../interfaces";
 
-const NavBar = ({ PagenotFound }) => {
+interface iNavBar {
+  PagenotFound: boolean;
+}
+
+//initialize allowed URLs
+const allowedURLS = ["skills", "projects", "journey", "contact"];
+
+const NavBar = ({ PagenotFound }: iNavBar) => {
   //pagenotfound comes from pageNotfound component in 404.jsx
-  const { currentTheme, UrlsPathnames, setUrlPathnames } = useThemeContext();
+  const { currentTheme, UrlsPathnames, setUrlPathnames }: iThemeContext =
+    useThemeContext();
   const location = useLocation();
 
   const style = {
@@ -19,24 +28,21 @@ const NavBar = ({ PagenotFound }) => {
 
   //---------setting URLS for nav color rendering-----------
 
-  //initialize allowed URLs
-  const allowedURLS = useRef(["skills", "projects", "journey", "contact"]);
-
   useEffect(() => {
     if (
-      allowedURLS?.current?.find((element) => {
+      allowedURLS?.find((element) => {
         return location?.pathname?.includes(element);
       })
     ) {
       setUrlPathnames(
-        allowedURLS.current?.slice(
+        allowedURLS.slice(
           0,
-          allowedURLS.current?.indexOf(
-            allowedURLS?.current
-              ?.find((element) => {
+          allowedURLS.indexOf(
+            String(
+              allowedURLS?.find((element) => {
                 return location?.pathname?.includes(element);
               })
-              ?.toLowerCase()
+            )?.toLowerCase()
           ) + 1
         )
       );

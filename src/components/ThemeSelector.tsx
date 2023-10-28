@@ -1,7 +1,9 @@
-import useThemeContext from "../hooks/useThemeContext";
+import useThemeContext from "../hooks/useThemeContext.ts";
+import React from "react";
+import { iThemeContext } from "../interfaces";
 
 const ThemeSelector = () => {
-  const { ThemeColors, setCurrentTheme } = useThemeContext();
+  const { ThemeColors, setCurrentTheme }: iThemeContext = useThemeContext();
   return (
     <main className="text-center h-fit ">
       <div className="py-2">Theme Colors</div>

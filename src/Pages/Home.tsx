@@ -1,21 +1,24 @@
-import { useState, useEffect, useRef } from "react";
-import useThemeContext from "../hooks/useThemeContext";
-import ThemeSelector from "../components/ThemeSelector";
-import CurvedArrow from "../components/CurvedArrow";
-import ImageContainer from "../components/ImageContainer";
-import Button from "../components/Button";
-import { PersolInfoData } from "../data/data";
-import TextTyper from "../components/TextTyper";
+import { useEffect, useRef } from "react";
+import useThemeContext from "../hooks/useThemeContext.ts";
+import ThemeSelector from "../components/ThemeSelector.tsx";
+import CurvedArrow from "../components/CurvedArrow.tsx";
+import ImageContainer from "../components/ImageContainer.tsx";
+import Button from "../components/Button.tsx";
+import { PersolInfoData } from "../data/data.tsx";
+import TextTyper from "../components/TextTyper.tsx";
+import React from "react";
+import { iThemeContext } from "../interfaces";
 
 const Intro = () => {
-  const { currentTheme } = useThemeContext();
+  const { currentTheme }: iThemeContext = useThemeContext();
   //animate rendering of pae content
-  const AnimatingRefs = useRef([]);
-  const addToAnimatingRefs = (element) => {
+  const AnimatingRefs = useRef<HTMLElement[]>([]);
+  const addToAnimatingRefs = (element: any) => {
     if (element && !AnimatingRefs?.current?.includes(element)) {
       AnimatingRefs?.current?.push(element);
     }
   };
+
   useEffect(() => {
     setTimeout(() => {
       AnimatingRefs?.current.forEach((element, index) => {
@@ -27,16 +30,6 @@ const Intro = () => {
       });
     }, 10);
   }, []);
-
-  //Type name on screen
-  const [name, setName] = useState([]);
-  useEffect(() => {
-    setTimeout(() => {
-      if (PersolInfoData?.name?.length > name?.length) {
-        setName([...name, PersolInfoData?.name[name?.length]]);
-      }
-    }, 200);
-  }, [name]);
 
   return (
     <section className="min-h-screen bg-[#0f0e0e]  flex justify-center items-center w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px] ">
@@ -52,8 +45,8 @@ const Intro = () => {
               </div>
               <div>
                 <TextTyper
-                  data={[name]}
-                  typingSpeed={200}
+                  data={[PersolInfoData.name]}
+                  typingSpeed={300}
                   repeat={false}
                 ></TextTyper>
               </div>
@@ -102,7 +95,7 @@ const Intro = () => {
 
         {/* //Note that image is already animated in image container */}
         <div className="w-full   h-[240px] sm:h-full">
-          <ImageContainer image={PersolInfoData.img}></ImageContainer>
+          <ImageContainer></ImageContainer>
         </div>
       </section>
     </section>

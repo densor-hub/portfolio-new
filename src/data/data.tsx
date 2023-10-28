@@ -39,6 +39,8 @@ import graphQL from "../images/graphql.jpg";
 //PersoalInfoData and Skills are single objects
 //ProjectsData and JourneyData are arrays
 
+import { iJourneyData, iSkillsData, iProjectsData } from "../interfaces";
+
 export const PersolInfoData = {
   img: DavidEnsor,
   name: "David Ensor",
@@ -47,7 +49,7 @@ export const PersolInfoData = {
     "Highly skilled full-stack developer with strength in both frontend and backend developments. Proven ability to work independently and as part of a team to deliver high-quality products on time and within budget.",
 };
 
-export const SkillsData = {
+export const SkillsData: iSkillsData = {
   languages: {
     data: [
       { title: "JavaScript", icon: JSicon },
@@ -78,8 +80,9 @@ export const SkillsData = {
         { title: "Node Js", icon: nodejsIcon },
         { title: ".Net-core", icon: dotNetIcon },
       ],
+      id: "backend",
     },
-    id: "backend",
+    // id: "backend",
     databases: {
       data: [
         { title: "MSSMS", icon: MSSMSicon },
@@ -99,7 +102,7 @@ export const SkillsData = {
   },
 };
 
-export const projectsData = [
+export const projectsData: iProjectsData[] = [
   {
     id: 4,
     name: "MUZIC",
@@ -113,6 +116,7 @@ export const projectsData = [
     id: 2,
     name: "AbiBeck",
     url: "https://abibeck.xyz",
+    urlText: "",
     logo: AbiBeckLogo,
     technologies: ["React JS", "Tailwind CSS"],
     description:
@@ -122,6 +126,7 @@ export const projectsData = [
     id: 3,
     name: "Cynosure",
     url: "",
+    urlText: "",
     contact: "contact",
     logo: CynoSureLogo,
     technologies: ["React JS", "Tailwind CSS", "MSSMS", "SQL", "GraphQL"],
@@ -129,7 +134,7 @@ export const projectsData = [
   },
 ];
 
-export const journeyData = [
+export const journeyData: iJourneyData[] = [
   {
     company: "Persol Systems Limited",
     role: "Full Stack Developer",

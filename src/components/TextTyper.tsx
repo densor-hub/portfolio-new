@@ -1,8 +1,14 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-const TextTyper = ({ data, typingSpeed, repeat }) => {
-  const [iterator, setIterator] = useState(0);
-  const [currentContent, setcurrentContent] = useState(data[0][0]);
+interface iTextTyper {
+  data: string[];
+  typingSpeed: number;
+  repeat: boolean;
+}
+
+const TextTyper = ({ data, typingSpeed, repeat }: iTextTyper) => {
+  const [iterator, setIterator] = useState<number>(0);
+  const [currentContent, setcurrentContent] = useState<string>(data[0][0]);
 
   useEffect(() => {
     const print = () => {
@@ -22,7 +28,8 @@ const TextTyper = ({ data, typingSpeed, repeat }) => {
           setIterator(0);
           setcurrentContent("");
         } else {
-          setcurrentContent(data[data.length - 1]);
+          console.log(currentContent);
+          // setcurrentContent();
         }
       }
     };
@@ -36,7 +43,11 @@ const TextTyper = ({ data, typingSpeed, repeat }) => {
     };
   }, [iterator, currentContent, typingSpeed, data, repeat]);
 
-  return <span>{currentContent}</span>;
+  return (
+    <span>
+      {currentContent ? currentContent : !repeat ? data[data.length - 1] : ""}
+    </span>
+  );
 };
 
 export default TextTyper;

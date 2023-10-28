@@ -1,10 +1,11 @@
 import { BsTwitter, BsGithub, BsLinkedin, BsArrowDown } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
-import useThemeContext from "../hooks/useThemeContext";
-import { Link } from "react-router-dom";
+import useThemeContext from "../hooks/useThemeContext.ts";
+import React from "react";
+import { iThemeContext } from "../interfaces";
 
 const Contact = () => {
-  const { currentTheme } = useThemeContext();
+  const { currentTheme }: iThemeContext = useThemeContext();
 
   return (
     <section className=" bg-[#0f0e0e] flex flex-col justify-center items-center w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px]">
@@ -37,55 +38,73 @@ const Contact = () => {
       <section className="flex py-10">
         <div className=" text-sm text-center m-2">
           <div>
-            <Link href={"https://github.com/densor-hub"} target="_blank">
+            <a
+              href={"https://github.com/densor-hub"}
+              target="_blank"
+              rel="noreferrer"
+            >
               <BsGithub
                 size={50}
                 className="border-2 rounded-full p-2 animate-bounce"
               />
-            </Link>
+            </a>
           </div>
           <div>
-            <Link href={"https://github.com/densor-hub"} target="_blank">
+            <a
+              href={"https://github.com/densor-hub"}
+              target="_blank"
+              rel="noreferrer"
+            >
               Git Hub
-            </Link>
+            </a>
           </div>
         </div>
 
         <div className=" text-sm text-center m-2">
           <div>
-            <Link
+            <a
               href={"https://www.linkedin.com/in/david-ensor-13032b215/"}
               target="_blank"
+              rel="noreferrer"
             >
               <BsLinkedin
                 size={50}
                 className="border-2 rounded-full p-2 animate-bounce"
               />
-            </Link>
+            </a>
           </div>
           <div>
-            <Link
+            <a
               href={"https://www.linkedin.com/in/david-ensor-13032b215/"}
               target="_blank"
+              rel="noreferrer"
             >
               LinkedIn
-            </Link>
+            </a>
           </div>
         </div>
 
         <div className=" text-sm text-center m-2">
           <div>
-            <Link href={"https://twitter.com/nanaessel_deeg"} target="_blank">
+            <a
+              href={"https://twitter.com/nanaessel_deeg"}
+              target="_blank"
+              rel="noreferrer"
+            >
               <BsTwitter
                 size={50}
                 className="border-2 rounded-full p-2 animate-bounce"
               />
-            </Link>
+            </a>
           </div>
           <div>
-            <Link href={"https://twitter.com/nanaessel_deeg"} target="_blank">
+            <a
+              href={"https://twitter.com/nanaessel_deeg"}
+              target="_blank"
+              rel="noreferrer"
+            >
               Twitter
-            </Link>
+            </a>
           </div>
         </div>
       </section>

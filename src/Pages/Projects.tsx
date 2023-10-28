@@ -1,17 +1,20 @@
-import { useEffect, useRef, useState } from "react";
-import useThemeContext from "../hooks/useThemeContext";
-import Button from "../components/Button";
-import { projectsData } from "../data/data";
+import React, { useEffect, useRef, useState } from "react";
+import useThemeContext from "../hooks/useThemeContext.ts";
+import Button from "../components/Button.tsx";
+import { projectsData } from "../data/data.tsx";
 import { Link } from "react-router-dom";
+import { iThemeContext, iProjectsData } from "../interfaces";
 
 const Projects = () => {
-  const { currentTheme } = useThemeContext();
-  const projects = useRef(projectsData);
+  const { currentTheme }: iThemeContext = useThemeContext();
+  const projects = useRef<iProjectsData[]>(projectsData);
 
-  const [displayedProjects, setDisplayedProjects] = useState([]);
+  const [displayedProjects, setDisplayedProjects] = useState<iProjectsData[]>(
+    []
+  );
 
-  const projectRefs = useRef([]);
-  const addProjectRefs = (elements) => {
+  const projectRefs = useRef<HTMLElement[]>([]);
+  const addProjectRefs = (elements: HTMLElement) => {
     if (elements && !projectRefs?.current?.includes(elements)) {
       projectRefs?.current?.push(elements);
     }

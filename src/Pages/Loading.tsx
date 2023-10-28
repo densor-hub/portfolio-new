@@ -1,6 +1,9 @@
-import useThemeContext from "../hooks/useThemeContext";
+import useThemeContext from "../hooks/useThemeContext.ts";
+import React from "react";
+import { iThemeContext } from "../interfaces";
+
 const Loading = () => {
-  const { currentTheme } = useThemeContext();
+  const { currentTheme }: iThemeContext = useThemeContext();
   return (
     <main className="w-sreen h-screen bg-[#0f0e0e] flex justify-center items-center">
       <section className="h-[200px] mx-auto w-fit flex">

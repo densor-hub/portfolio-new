@@ -1,10 +1,11 @@
 import { useRef, useEffect } from "react";
-import useThemeContext from "../hooks/useThemeContext";
-import Button from "../components/Button";
+import useThemeContext from "../hooks/useThemeContext.ts";
+import Button from "../components/Button.tsx";
 import { BsArrowDown } from "react-icons/bs";
 import { ImLink } from "react-icons/im";
 import { Link } from "react-router-dom";
-import { journeyData } from "../data/data";
+import { journeyData } from "../data/data.tsx";
+import React from "react";
 
 const Journey = () => {
   const { currentTheme } = useThemeContext();
@@ -12,8 +13,8 @@ const Journey = () => {
 
   const DateGetter = new Date();
 
-  const ExperienceContainerRefs = useRef([]);
-  const addToExperiencesContainerRef = (element) => {
+  const ExperienceContainerRefs = useRef<HTMLDivElement[]>([]);
+  const addToExperiencesContainerRef = (element: HTMLDivElement) => {
     if (element && !ExperienceContainerRefs?.current?.includes(element)) {
       ExperienceContainerRefs?.current?.push(element);
     }

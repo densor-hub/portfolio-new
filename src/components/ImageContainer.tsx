@@ -1,14 +1,17 @@
-import { useEffect, useRef } from "react";
-import useThemeContext from "../hooks/useThemeContext";
-import { PersolInfoData } from "../data/data";
+import React, { useEffect, useRef } from "react";
+import useThemeContext from "../hooks/useThemeContext.ts";
+import { PersolInfoData } from "../data/data.tsx";
+import { iThemeContext } from "../interfaces";
 
 const ImageContainer = () => {
-  const { currentTheme } = useThemeContext();
-  const imageContainerRef = useRef();
+  const { currentTheme }: iThemeContext = useThemeContext();
+  const imageContainerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     setTimeout(() => {
-      imageContainerRef.current.style.transform = "translateY(-50%)";
+      if (imageContainerRef.current !== null) {
+        imageContainerRef.current.style.transform = "translateY(-50%)";
+      }
     }, 10);
   }, []);
   return (

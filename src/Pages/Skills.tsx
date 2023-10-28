@@ -1,14 +1,16 @@
-import { useRef, useState } from "react";
-import useThemeContext from "../hooks/useThemeContext";
-import Button from "../components/Button";
-import { SkillsData } from "../data/data";
+import React, { useRef, useState } from "react";
+import useThemeContext from "../hooks/useThemeContext.ts";
+import Button from "../components/Button.tsx";
+import { SkillsData } from "../data/data.tsx";
+import { iSkillsData, iTechContainer, iThemeContext } from "../interfaces";
 
 const Skills = () => {
-  const content = useRef(SkillsData);
-  const { currentTheme } = useThemeContext();
-  const [currentContent, setCurrentContent] = useState(
+  const content = useRef<iSkillsData>(SkillsData);
+  const { currentTheme }: iThemeContext = useThemeContext();
+  const [currentContent, setCurrentContent] = useState<iTechContainer>(
     content?.current?.frontend
   );
+
   return (
     <section className="h-full min-h-screen flex justify-center items-center bg-[#0f0e0e] w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px]">
       <section className=" w-full h-fit relative top-[50%] ">

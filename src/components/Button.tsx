@@ -1,9 +1,15 @@
 import { useNavigate } from "react-router-dom";
-import useThemeContext from "../hooks/useThemeContext";
+import useThemeContext from "../hooks/useThemeContext.ts";
+import React from "react";
+import { iThemeContext } from "../interfaces";
 
-const Button = ({ pathname, label }) => {
+interface iButton {
+  pathname: string;
+  label: string;
+}
+const Button = ({ pathname, label }: iButton) => {
   const navigateTo = useNavigate();
-  const { currentTheme } = useThemeContext();
+  const { currentTheme }: iThemeContext = useThemeContext();
   return (
     <button
       onClick={() => {

@@ -1,35 +1,35 @@
 import { lazy, Suspense } from "react";
 import "./App.css";
-import { ThemeContextProvider } from "./context/themeColorsContext";
+import { ThemeContextProvider } from "./context/themeColorsContext.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Loading from "./UI/Loading";
+import Loading from "./Pages/Loading.tsx";
 
 const LandingPage = lazy(() => {
-  return import("./UI/LandingPage");
+  return import("./Pages/LandingPage.tsx");
 });
 
 const Home = lazy(() => {
-  return import("./UI/Home");
+  return import("./Pages/Home.tsx");
 });
 const Skills = lazy(() => {
-  return import("./UI/Skills");
+  return import("./Pages/Skills.tsx");
 });
 
 const Projects = lazy(() => {
-  return import("./UI/Projects");
+  return import("./Pages/Projects.tsx");
 });
 
 const Journey = lazy(() => {
-  return import("./UI/Journey");
+  return import("./Pages/Journey.tsx");
 });
 
 const Contact = lazy(() => {
-  return import("./UI/Contact");
+  return import("./Pages/Contact.tsx");
 });
 
 const Page404 = lazy(() => {
-  return import("./UI/404");
+  return import("./Pages/404.tsx");
 });
 
 const router = createBrowserRouter([
