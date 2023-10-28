@@ -46,7 +46,7 @@ const Intro = () => {
               <div>
                 <TextTyper
                   data={[PersolInfoData.name]}
-                  typingSpeed={300}
+                  typingSpeed={200}
                   repeat={false}
                 ></TextTyper>
               </div>
