@@ -1,3 +1,8 @@
+// declare module '*.jpg' {
+//   const value: string;
+//   export default value;
+// }
+
 //journey
 import PersolIcon from "../images/persol-icon.jpg";
 import AngloGoldIcon2 from "../images/anglogold-icon.png";
@@ -186,8 +191,8 @@ export const journeyData: iJourneyData[] = [
       end: "August 2019",
     },
     activities: [
-      "Designed and built  fully responsive and visusally appealing a website for the company",
-      "Built enterprise management application for managing employees, assets, stocks, inventory and  purchases which drastically reduced loss of resources and kept all employees under systematic checks to safeguard the organization's assets and resources.",
+      "Web developer who designed and built a fully responsive and visusally appealing website for Asabaea Engineering Limited.",
+      "Full-statck developer who built enterprise management application for managing employees, assets, stocks, inventory and  purchases which drastically reduced loss of resources and kept all employees under systematic checks to safeguard the organization's assets and resources.",
     ],
     icon: AsabeaIcon,
     url: "https://asabea-el.com",
