@@ -1,4 +1,5 @@
 import {
+  fireEvent,
   logDOM,
   logRoles,
   render,
@@ -132,5 +133,35 @@ describe("TESTING HOMEPAGE", () => {
     expect(orange_selector).toHaveStyle({ backgroundColor: "#ff4500" });
 
     //expect(yellow_selector).toHaveStyle({ backgroundColor: "yellow" });
+  });
+
+  it("should render CurvedArrow", () => {
+    render(
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>
+    );
+    const curved_arrow = screen.getByTestId("curved_arrow");
+    expect(curved_arrow).toBeInTheDocument();
+  });
+
+  it("should render buttom with name 'Next'", () => {
+    render(
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>
+    );
+    const NextButton = screen.getByRole("button", { name: /Next/i });
+    expect(NextButton).toBeInTheDocument();
+  });
+
+  it("should render image container with image", () => {
+    render(
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>
+    );
+    const image_container = screen.getByTestId("image_container");
+    expect(image_container).toBeInTheDocument();
   });
 });

@@ -16,6 +16,7 @@ const ImageContainer = () => {
   }, []);
   return (
     <section
+      data-testid="image_container"
       ref={imageContainerRef}
       className="w-fit relative  top-[50%]  duration-500  transition-transform  flex flex-col  py-7 lg:py-14 px-5 lg:px-10 mx-auto justify-center items-center"
     >
