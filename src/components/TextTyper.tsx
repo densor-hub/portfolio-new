@@ -18,18 +18,17 @@ const TextTyper = ({ data, typingSpeed, repeat }: iTextTyper) => {
             currentContent + data[iterator][currentContent?.length]
           );
         } else {
-          setIterator((p) => {
-            return p + 1;
-          });
-          setcurrentContent("");
+          setTimeout(() => {
+            setIterator((p) => {
+              return p + 1;
+            });
+            setcurrentContent("");
+          }, 2000);
         }
       } else {
         if (repeat) {
           setIterator(0);
           setcurrentContent("");
-        } else {
-          console.log(currentContent);
-          // setcurrentContent();
         }
       }
     };
@@ -44,10 +43,27 @@ const TextTyper = ({ data, typingSpeed, repeat }: iTextTyper) => {
   }, [iterator, currentContent, typingSpeed, data, repeat]);
 
   return (
-    <span>
+    <span data-testid="type_writter">
       {currentContent ? currentContent : !repeat ? data[data.length - 1] : ""}
+      {!(data[iterator]?.length > currentContent?.length) && repeat && (
+        <BlinkingDash />
+      )}
     </span>
   );
 };
 
 export default TextTyper;
+
+const BlinkingDash = () => {
+  const [dash, setDash] = useState(" _");
+  useEffect(() => {
+    setTimeout(() => {
+      if (dash) {
+        setDash("");
+      } else {
+        setDash(" _");
+      }
+    }, 300);
+  }, [dash]);
+  return <span>{dash && dash}</span>;
+};

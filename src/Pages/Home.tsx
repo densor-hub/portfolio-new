@@ -9,7 +9,7 @@ import TextTyper from "../components/TextTyper.tsx";
 import React from "react";
 import { iThemeContext } from "../interfaces";
 
-const Intro = () => {
+const Home = () => {
   const { currentTheme }: iThemeContext = useThemeContext();
   //animate rendering of pae content
   const AnimatingRefs = useRef<HTMLElement[]>([]);
@@ -41,7 +41,8 @@ const Intro = () => {
               ref={addToAnimatingRefs}
             >
               <div>
-                <span style={{ color: currentTheme }}>Hello,</span> I'm{" "}
+                <span style={{ color: currentTheme }}>Hello, </span>{" "}
+                <span> I'm </span>
               </div>
               <div>
                 <TextTyper
@@ -51,7 +52,7 @@ const Intro = () => {
                 ></TextTyper>
               </div>
               <div className="text-lg sm:text-2xl font-semibold pt-5">
-                I am a{" "}
+                <span data-testid="role_lead"> I am a </span>
                 <span style={{ color: currentTheme }}>
                   <TextTyper
                     data={PersolInfoData.professions}
@@ -65,6 +66,7 @@ const Intro = () => {
             <p
               ref={addToAnimatingRefs}
               className="relative transition-transform left-[10vw] duration-700 "
+              data-testid="overview_paragrah"
             >
               {PersolInfoData?.overview}
             </p>
@@ -102,4 +104,4 @@ const Intro = () => {
   );
 };
 
-export default Intro;
+export default Home;

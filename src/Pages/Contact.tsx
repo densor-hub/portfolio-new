@@ -63,7 +63,7 @@ const Contact = () => {
         <div className=" text-sm text-center m-2">
           <div>
             <a
-              href={"https://www.linkedin.com/in/david-ensor-13032b215/"}
+              href={"https://www.linkedin.com/in/david-ensor/"}
               target="_blank"
               rel="noreferrer"
             >
@@ -75,7 +75,7 @@ const Contact = () => {
           </div>
           <div>
             <a
-              href={"https://www.linkedin.com/in/david-ensor-13032b215/"}
+              href={"https://www.linkedin.com/in/david-ensor/"}
               target="_blank"
               rel="noreferrer"
             >
