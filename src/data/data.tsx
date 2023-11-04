@@ -75,14 +75,15 @@ export const SkillsData: iSkillsData = {
     id: "frontend",
   },
   backend: {
+    id: "backend",
     mainTech: {
       data: [
         { title: "Node Js", icon: nodejsIcon },
         { title: ".Net-core", icon: dotNetIcon },
       ],
-      id: "backend",
+      id: "mainTech",
     },
-    // id: "backend",
+
     databases: {
       data: [
         { title: "MSSMS", icon: MSSMSicon },

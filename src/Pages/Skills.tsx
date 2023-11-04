@@ -102,29 +102,30 @@ const Skills = () => {
             )}
           </div>
           <section className=" mx-auto flex flex-wrap justify-center items-center w-fit">
-            {currentContent?.data?.map((elements, index) => {
-              return (
-                <div key={index} className="p-4 text-center">
-                  <div className="animate-bounce">
-                    <img
-                      src={elements.icon}
-                      alt={elements?.title}
-                      className="w-16 h-16 rounded-full bg-center bg-no-repeat border-2 border-white p-2 "
-                    ></img>
+            {currentContent.id === "frontend" &&
+              currentContent?.data?.map((elements, index) => {
+                return (
+                  <div key={index} className="p-4 text-center">
+                    <div className="animate-bounce">
+                      <img
+                        src={elements.icon}
+                        alt={elements?.title}
+                        className="w-16 h-16 rounded-full bg-center bg-no-repeat border-2 border-white p-2 "
+                      ></img>
+                    </div>
+                    <div>{elements?.title}</div>
                   </div>
-                  <div>{elements?.title}</div>
-                </div>
-              );
-            })}
+                );
+              })}
 
             {currentContent?.mainTech && (
               <section className=" ld:mx-auto">
-                <div
+                <h1
                   className="text-center py-2 font-bold text-xl"
                   style={{ color: currentTheme }}
                 >
                   Main
-                </div>
+                </h1>
                 <section className="border-0 w-fit mx-auto flex flex-wrap">
                   {currentContent?.mainTech?.data?.map((elements, index) => {
                     return (
@@ -146,12 +147,12 @@ const Skills = () => {
 
             {currentContent?.databases && (
               <section>
-                <div
+                <h1
                   className="text-center py-5 font-bold text-xl"
                   style={{ color: currentTheme }}
                 >
                   Databases
-                </div>
+                </h1>
                 <section className="border-0 w-fit mx-auto flex flex-wrap">
                   {currentContent?.databases?.data?.map((elements, index) => {
                     return (
@@ -173,12 +174,12 @@ const Skills = () => {
 
             {currentContent?.OtherTools && (
               <section>
-                <div
+                <h3
                   className="text-center py-1 font-bold text-md"
                   style={{ color: currentTheme }}
                 >
                   Other Tools
-                </div>
+                </h3>
                 <section className="border-0 w-fit mx-auto flex flex-wrap">
                   {currentContent?.OtherTools?.data?.map((elements, index) => {
                     return (

@@ -11,6 +11,7 @@ import "@testing-library/jest-dom";
 import Home from "../Pages/Home.tsx";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
+import { name } from "typescipt";
 
 describe("TESTING HOMEPAGE", () => {
   it("should show intro 'Hello, i'm", () => {
@@ -163,5 +164,8 @@ describe("TESTING HOMEPAGE", () => {
     );
     const image_container = screen.getByTestId("image_container");
     expect(image_container).toBeInTheDocument();
+
+    const image = screen.getByRole("img", { name: "David Ensor." });
+    expect(image).toBeInTheDocument();
   });
 });
