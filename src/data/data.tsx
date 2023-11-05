@@ -131,7 +131,7 @@ export const projectsData: iProjectsData[] = [
     contact: "contact",
     logo: CynoSureLogo,
     technologies: ["React JS", "Tailwind CSS", "MSSMS", "SQL", "GraphQL"],
-    description: "An enterprise relations and data management sytem.",
+    description: "An enterprise relations and data management system.",
   },
 ];
 
