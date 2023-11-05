@@ -70,7 +70,7 @@ describe("TESTING SKILLS PAGE", () => {
         <Skills />
       </BrowserRouter>
     );
-    const NextButton = screen.getByRole("button", { name: /Next/i });
+    const NextButton = screen.getByRole("button", { name: /NEXT/i });
     expect(NextButton).toBeInTheDocument();
   });
 
@@ -80,7 +80,7 @@ describe("TESTING SKILLS PAGE", () => {
         <Skills />
       </BrowserRouter>
     );
-    const BackButton = screen.getAllByRole("button", { name: /Back/i });
+    const BackButton = screen.getAllByRole("button", { name: /BACK/i });
     expect(BackButton[1].textContent).toBe("Back");
   });
 });
