@@ -2,13 +2,11 @@ import { lazy } from "react";
 import { Outlet } from "react-router-dom";
 
 import React from "react";
-const NavBar = lazy(() => {
-  return import("../components/Nav.tsx");
-});
+import NavBar from "../components/Nav";
 const LandingPage = () => {
   return (
     <main className="flex min-h-screen bg-[#201f1f] text-white overflow-x-hidden">
-      <NavBar PagenotFound={false} />
+      <NavBar PagenotFound={false} data-testid="nav_bar" />
       <Outlet />
     </main>
   );

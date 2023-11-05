@@ -54,7 +54,10 @@ const NavBar = ({ PagenotFound }: iNavBar) => {
   }, [location?.pathname, setUrlPathnames]);
 
   return (
-    <main className="fixed z-10 h-full w-fit bg-[#201f1f]  flex justify-center items-center px-2 sm:px-8 min-h-[580px] ">
+    <main
+      className="fixed z-10 h-full w-fit bg-[#201f1f]  flex justify-center items-center px-2 sm:px-8 min-h-[580px] "
+      data-testid="nav_bar"
+    >
       <section className="min-h-[580px]">
         <Link to={"/"}>
           <section
@@ -72,7 +75,7 @@ const NavBar = ({ PagenotFound }: iNavBar) => {
                   : { color: "#525252" }
               }
             >
-              <ImHome size={30}></ImHome>
+              <ImHome size={30} data-testid="home_icon"></ImHome>
             </div>
             <div className={style.iconLabel}>HOME</div>
           </section>
@@ -110,7 +113,7 @@ const NavBar = ({ PagenotFound }: iNavBar) => {
                   : {}
               }
             >
-              <FaCode size={30} />
+              <FaCode size={30} data-testid="skills_icon" />
             </div>
             <div className={style.iconLabel}>SKILLS</div>
           </section>
@@ -147,7 +150,7 @@ const NavBar = ({ PagenotFound }: iNavBar) => {
                   : {}
               }
             >
-              <BsBriefcaseFill size={30}></BsBriefcaseFill>
+              <BsBriefcaseFill size={30} data-testid="projects_icon" />
             </div>
             <div className={style.iconLabel}>PROJECTS</div>
           </section>
@@ -185,7 +188,7 @@ const NavBar = ({ PagenotFound }: iNavBar) => {
                   : {}
               }
             >
-              <GiArchiveResearch size={30}></GiArchiveResearch>
+              <GiArchiveResearch size={30} data-testid="journey_icon" />
             </div>
             <div className={style.iconLabel}>JOURNEY</div>
           </section>
@@ -222,7 +225,7 @@ const NavBar = ({ PagenotFound }: iNavBar) => {
                   : {}
               }
             >
-              <BiSolidPhone size={30}></BiSolidPhone>{" "}
+              <BiSolidPhone size={30} data-testid="contact_icon" />{" "}
             </div>
             <div className={style.iconLabel}>CONTACT</div>
           </section>
