@@ -10,9 +10,9 @@ const Contact = () => {
   return (
     <section className=" bg-[#0f0e0e] flex flex-col justify-center items-center w-[calc(100vw-69px)] sm:w-[calc(100vw-116px)] relative left-[69px] sm:left-[116px]">
       <section>
-        <div className="text-3xl font-bold" style={{ color: currentTheme }}>
+        <h1 className="text-3xl font-bold" style={{ color: currentTheme }}>
           Heyya,
-        </div>
+        </h1>
         <div>Contact me via</div>
         <div className="w-fit mx-auto">
           <BsArrowDown />
@@ -23,11 +23,18 @@ const Contact = () => {
         <div className="p-2">
           <div className="w-fit mx-auto">
             <MdEmail
+              data-testid="email_icon"
               size={50}
               className="border-2 rounded-full p-2 animate-bounce"
             />
           </div>
-          <div style={{ color: currentTheme }}>davidensor5000@gmail.com</div>
+          <a
+            style={{ color: currentTheme }}
+            href="mailto:davidensor5000@gmail.com"
+            className="hover:underline"
+          >
+            davidensor5000@gmail.com
+          </a>
         </div>
       </section>
 
@@ -44,6 +51,7 @@ const Contact = () => {
               rel="noreferrer"
             >
               <BsGithub
+                data-testid="gitHub_icon"
                 size={50}
                 className="border-2 rounded-full p-2 animate-bounce"
               />
@@ -54,6 +62,7 @@ const Contact = () => {
               href={"https://github.com/densor-hub"}
               target="_blank"
               rel="noreferrer"
+              className="hover:underline"
             >
               Git Hub
             </a>
@@ -70,6 +79,7 @@ const Contact = () => {
               <BsLinkedin
                 size={50}
                 className="border-2 rounded-full p-2 animate-bounce"
+                data-testid="linkedIn_icon"
               />
             </a>
           </div>
@@ -94,6 +104,7 @@ const Contact = () => {
               <BsTwitter
                 size={50}
                 className="border-2 rounded-full p-2 animate-bounce"
+                data-testid="twitter_icon"
               />
             </a>
           </div>

@@ -1,18 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
-import {
-  render,
-  screen,
-  fireEvent,
-  logRoles,
-  logDOM,
-} from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Skills from "../Pages/Skills";
 import React from "react";
 
 describe("TESTING SKILLS PAGE", () => {
   it("should render navigation buttons with label 'front end' which sets displayed contents to frontend stuff when clicked", () => {
-    const { container } = render(
+    render(
       <BrowserRouter>
         <Skills />
       </BrowserRouter>
