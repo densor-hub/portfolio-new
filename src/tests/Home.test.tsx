@@ -82,7 +82,7 @@ describe("TESTING HOMEPAGE", () => {
             .includes(firstRole.toLowerCase().trim())
         );
       },
-      { timeout: firstRole.length * 250 }
+      { timeout: firstRole.length * 240 }
     );
 
     // await waitFor(
