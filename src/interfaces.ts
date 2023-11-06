@@ -47,7 +47,7 @@ export interface iJourneyData {
   company: string;
   role: string;
   duration: iDuration;
-  activities: string[];
+  activities?: string[];
   icon: string;
   url: string;
 }
