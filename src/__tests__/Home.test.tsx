@@ -1,30 +1,20 @@
-import {
-  fireEvent,
-  logDOM,
-  logRoles,
-  render,
-  screen,
-  waitFor,
-} from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import Home from "../Pages/Home.tsx";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { name } from "typescipt";
 
 describe("TESTING HOMEPAGE", () => {
   it("should show intro 'Hello, i'm", () => {
-    const { container } = render(
+    render(
       <BrowserRouter>
         <Home />
       </BrowserRouter>
     );
 
-    expect(screen.queryByText(/Hello,/i)).toBeInTheDocument();
-
-    let startingIntroText = screen.getByText(/i'm/i);
-    expect(startingIntroText).toBeInTheDocument();
+    expect(screen.getByText(/Hello,/i)).toBeInTheDocument();
+    expect(screen.getByText(/i'm/i)).toBeInTheDocument();
   });
 
   it("should display Text Typer with text 'David Ensor'", async () => {
@@ -35,25 +25,20 @@ describe("TESTING HOMEPAGE", () => {
     );
 
     let typeWritters = screen.getAllByTestId("type_writter");
-    let name = "David Ensor";
+    let name = "David Ensor.";
     let type_writter1_Text = typeWritters[0].textContent;
     expect(type_writter1_Text).toEqual("D");
 
     await waitFor(
       () => {
-        expect(screen.getByText(name)).toBeInTheDocument();
-        expect(
-          type_writter1_Text
-            .toLowerCase()
-            .trim()
-            .includes(name.toLowerCase().trim())
-        );
+        const newTypeWritterText = screen.getAllByTestId("type_writter");
+        expect(newTypeWritterText[0]).toHaveTextContent("David Ensor.");
       },
       { timeout: name.length * 200 + 200 }
     );
   });
 
-  it("should display Text Typer with alternatining roles 'Software Developer.' and 'Musician.'", async () => {
+  it("should display Text Typer with alternatining roles", async () => {
     jest.setTimeout(20000);
     render(
       <BrowserRouter>
@@ -67,22 +52,16 @@ describe("TESTING HOMEPAGE", () => {
     expect(roleLeadingText).toHaveTextContent(/i am a/i);
 
     let typeWritters = screen.getAllByTestId("type_writter");
-    let firstRole = "Software Developer";
-    let secondRole = "Musician";
+    let firstRole = "Front-end developer";
     let type_writter2_Text = typeWritters[1].textContent;
-    expect(type_writter2_Text).toEqual("S");
+    expect(type_writter2_Text).toEqual("F");
 
     await waitFor(
       () => {
-        expect(screen.getByText(/Software Developer/i)).toBeInTheDocument();
-        expect(
-          type_writter2_Text
-            .toLowerCase()
-            .trim()
-            .includes(firstRole.toLowerCase().trim())
-        );
+        const newTypeWritterText = screen.getAllByTestId("type_writter");
+        expect(newTypeWritterText[1]).toHaveTextContent(firstRole);
       },
-      { timeout: firstRole.length * 240 }
+      { timeout: firstRole.length * 250 }
     );
 
     // await waitFor(

@@ -44,7 +44,11 @@ import { iJourneyData, iSkillsData, iProjectsData } from "../interfaces";
 export const PersolInfoData = {
   img: DavidEnsor,
   name: "David Ensor.",
-  professions: ["Software developer", "Musician"],
+  professions: [
+    "Front-end developer",
+    "Back-end developer",
+    "Mobile developer",
+  ],
   overview:
     "Highly skilled full-stack developer with strength in both frontend and backend developments. Proven ability to work independently and as part of a team to deliver high-quality products on time and within budget.",
 };
@@ -131,7 +135,8 @@ export const projectsData: iProjectsData[] = [
     contact: "contact",
     logo: CynoSureLogo,
     technologies: ["React JS", "Tailwind CSS", "MSSMS", "SQL", "GraphQL"],
-    description: "An enterprise relations and data management system.",
+    description:
+      "A React Js template for boostraping development, ensuring fast development .",
   },
 ];
 
@@ -144,8 +149,8 @@ export const journeyData: iJourneyData[] = [
       end: "Present",
     },
     activities: [
-      "Frontend developer on the team for One-Bost System, an application that automates, streamlines and unifies processes involved in the distribution of petroleum products across Ghana, tailored for National Petroleum Authority (NPA)",
-      "Frontend developer on the team redeveloping the Enterprise Relations and Data Management App used by NPA from less responsive and less performant Knockout JS app into a modern day highly functional React Js app.",
+      // "Frontend developer on the team for One-Bost System, an application that automates, streamlines and unifies processes involved in the distribution of petroleum products across Ghana, tailored for National Petroleum Authority (NPA)",
+      // "Frontend developer on the team redeveloping the Enterprise Relations and Data Management App used by NPA from less responsive and less performant Knockout JS app into a modern day highly functional React Js app.",
     ],
     icon: PersolIcon,
     url: "https://persol.net",
@@ -158,9 +163,9 @@ export const journeyData: iJourneyData[] = [
       end: "June 2023",
     },
     activities: [
-      "Fontend developer on the team for designing appealing and highly functional landing page for Abibeck Software Solutions, ensuring a remarkable first impression upon visitation of the website.",
-      "Full-stack developer on the team for Muzic, a website builder application that enables users to create websites by simply completing forms and selecting templates, tailored for musicians.",
-      "Full-stack developer and team lead on the team for development of an Enterprise Relation, Data Management and Point of Sale Application.",
+      // "Fontend developer on the team for designing appealing and highly functional landing page for Abibeck Software Solutions, ensuring a remarkable first impression upon visitation of the website.",
+      // "Full-stack developer on the team for Muzic, a website builder application that enables users to create websites by simply completing forms and selecting templates, tailored for musicians.",
+      // "Full-stack developer and team lead on the team for development of an Enterprise Relation, Data Management and Point of Sale Application.",
     ],
     icon: AbibeckIcon,
     url: "https://abibeck.xyz",
@@ -173,8 +178,8 @@ export const journeyData: iJourneyData[] = [
       end: "July 2021",
     },
     activities: [
-      "Full stack developer on the team for Anglogold Ashanti Iduapriem Mines Canteen App.",
-      "Graphic designer who daily desined canteen menu that was displayed on the canteen screens",
+      // "Full stack developer on the team for Anglogold Ashanti Iduapriem Mines Canteen App.",
+      // "Graphic designer who daily desined canteen menu that was displayed on the canteen screens",
     ],
     icon: AngloGoldIcon2,
     url: "https://www.anglogoldashanti.com/portfolio/africa/iduapriem/",
@@ -187,8 +192,8 @@ export const journeyData: iJourneyData[] = [
       end: "August 2019",
     },
     activities: [
-      "Designed and built  fully responsive and visusally appealing a website for the company",
-      "Built enterprise management application for managing employees, assets, stocks, inventory and  purchases which drastically reduced loss of resources and kept all employees under systematic checks to safeguard the organization's assets and resources.",
+      // "Designed and built  fully responsive and visusally appealing a website for the company",
+      // "Built enterprise management application for managing employees, assets, stocks, inventory and  purchases which drastically reduced loss of resources and kept all employees under systematic checks to safeguard the organization's assets and resources.",
     ],
     icon: AsabeaIcon,
     url: "https://asabea-el.com",
@@ -201,9 +206,9 @@ export const journeyData: iJourneyData[] = [
       end: "August 2018",
     },
     activities: [
-      "Learnt and utilized tools and technologies including but not limited to HTML, CSS, and JavaScript",
-      "Learnt and utilized MSSQL for database management",
-      "Learnt and utilized Git for version control",
+      // "Learnt and utilized tools and technologies including but not limited to HTML, CSS, and JavaScript",
+      // "Learnt and utilized MSSQL for database management",
+      // "Learnt and utilized Git for version control",
     ],
     icon: AbiBeckLogo,
     url: "https://abibeck.xyz",

@@ -1,5 +1,5 @@
 import React from "react";
-import { render, logRoles, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Page404 from "../Pages/404.tsx";
 

@@ -56,7 +56,7 @@ const Home = () => {
                 <span style={{ color: currentTheme }}>
                   <TextTyper
                     data={PersolInfoData.professions}
-                    typingSpeed={200}
+                    typingSpeed={100}
                     repeat={true}
                   ></TextTyper>
                 </span>

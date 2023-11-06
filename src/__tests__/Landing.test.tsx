@@ -1,12 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
-import { render, screen, fireEvent, logRoles } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import React from "react";
 import LandingPage from "../Pages/LandingPage";
 
 describe("TESTING LANDING PAGE", () => {
   it("should render NavBar", () => {
-    const { container } = render(
+    render(
       <BrowserRouter>
         <LandingPage />
       </BrowserRouter>

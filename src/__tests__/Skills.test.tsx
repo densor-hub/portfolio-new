@@ -35,7 +35,7 @@ describe("TESTING SKILLS PAGE", () => {
   });
 
   it("should render navigation buttons with label 'back end'  which sets displayed contents to backend stuff when clicked", () => {
-    const { container } = render(
+    render(
       <BrowserRouter>
         <Skills />
       </BrowserRouter>
@@ -50,9 +50,13 @@ describe("TESTING SKILLS PAGE", () => {
     expect(screen.getByText(/Backend technologies/i)).toBeInTheDocument();
 
     //headings
-    expect(screen.getByRole("heading", { name: /main/i }));
-    expect(screen.getByRole("heading", { name: /Databases/i }));
-    expect(screen.getByRole("heading", { name: /Other tools/i }));
+    expect(screen.getByRole("heading", { name: /main/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /Databases/i })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /Other tools/i })
+    ).toBeInTheDocument();
 
     //technologies (images)
     expect(screen.getByRole("img", { name: "Node Js" })).toBeInTheDocument();
