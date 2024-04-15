@@ -1,8 +1,9 @@
-import { BsTwitter, BsGithub, BsLinkedin, BsArrowDown } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsArrowDown } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import useThemeContext from "../hooks/useThemeContext.ts";
 import React from "react";
 import { iThemeContext } from "../interfaces";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Contact = () => {
   const { currentTheme }: iThemeContext = useThemeContext();
@@ -101,7 +102,7 @@ const Contact = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <BsTwitter
+              <FaXTwitter
                 size={50}
                 className="border-2 rounded-full p-2 animate-bounce"
                 data-testid="twitter_icon"
@@ -114,7 +115,7 @@ const Contact = () => {
               target="_blank"
               rel="noreferrer"
             >
-              Twitter
+              X (twitter)
             </a>
           </div>
         </div>
