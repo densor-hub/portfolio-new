@@ -28,7 +28,7 @@ const ImageContainer = () => {
       <img
         src={PersolInfoData?.img}
         alt={PersolInfoData?.name}
-        className="w-[180px] lg:w-[300px] h-[180px] lg:h-[350px]"
+        className="w-[180px] lg:w-[300px] h-[180px] lg:h-[300px]"
       ></img>
 
       <div

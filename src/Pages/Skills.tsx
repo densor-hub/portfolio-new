@@ -84,24 +84,7 @@ const Skills = () => {
         </section>
 
         <section className="w-fit mx-auto">
-          <div className="text-center">
-            {currentContent?.id === "languages" ? (
-              <i>
-                <span
-                  style={{ color: currentTheme }}
-                >{`programming ${currentContent?.id}`}</span>{" "}
-                i have familiarize myself with over the years.
-              </i>
-            ) : (
-              <i>
-                <span style={{ color: currentTheme }}>
-                  {`${currentContent?.id} technologies`}{" "}
-                </span>
-                i have familiarize myself with over the years.
-              </i>
-            )}
-          </div>
-          <section className=" mx-auto flex flex-wrap justify-center items-center w-fit">
+          <section className="mx-auto flex flex-wrap justify-center items-center w-fit" style={{borderTop:`1px solid ${currentTheme}`, paddingTop: currentContent?.id === "frontend" ? "20px" : ""}}>
             {currentContent.id === "frontend" &&
               currentContent?.data?.map((elements, index) => {
                 return (

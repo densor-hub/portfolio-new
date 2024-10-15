@@ -8,9 +8,10 @@ import AsabeaIcon from "../images/ASABEA-USE.png";
 import MuzicLogo from "../images/muzica.jpg";
 import AbiBeckLogo from "../images/abibeck logo.jpg";
 import CynoSureLogo from "../images/cynosure.png";
+import NPA from "../images/NPA.jpg";
 
 //personal Data
-import DavidEnsor from "../images/david-ensor.jpg";
+import DavidEnsor from "../images/david-ensor2.jpg";
 
 //skills
 import JSicon from "../images/jsicon.png";
@@ -84,6 +85,7 @@ export const SkillsData: iSkillsData = {
       data: [
         { title: "Node Js", icon: nodejsIcon },
         { title: ".Net-core", icon: dotNetIcon },
+        { title: "Python", icon: PythonIcon }
       ],
       id: "mainTech",
     },
@@ -109,16 +111,27 @@ export const SkillsData: iSkillsData = {
 
 export const projectsData: iProjectsData[] = [
   {
-    id: 4,
+    id: 1,
+    name: "NPA Invoicing",
+    url: "",
+    urlText: "NPA Invoicing",
+    logo: NPA,
+    technologies: ["React JS", "Boostrap CSS", "MSSMS", "SQL"],
+    description:
+      "Invoicing App for National Petroleaum Authority of Ghana",
+  },
+  {
+    id: 2,
     name: "MUZIC",
-    url: "https://muzic.fly.dev/home?a=nana-essel-deeg",
-    urlText: "my website created with MUZIC",
+    // url: "https://muzic.fly.dev/home?a=nana-essel-deeg",
+    url: "https://muzic.fly.dev/",
+    urlText: "MUZIC",
     logo: MuzicLogo,
     technologies: ["React JS", "Tailwind CSS", "MSSMS", "SQL", "GraphQL"],
     description: "Muzic is a website creator app tailored for musicains",
   },
   {
-    id: 2,
+    id: 3,
     name: "AbiBeck",
     url: "https://abibeck.xyz",
     urlText: "",
@@ -128,7 +141,7 @@ export const projectsData: iProjectsData[] = [
       "Designed modern day landing page for AbiBeck Software Solutions.",
   },
   {
-    id: 3,
+    id: 4,
     name: "Cynosure",
     url: "",
     urlText: "",
@@ -175,18 +188,18 @@ export const journeyData: iJourneyData[] = [
     company: "Asabea Engineering Limited",
     role: "Web Developer",
     duration: {
-      start: "May 2019 ",
-      end: "August 2019",
+      start: "July 2019",
+      end: "August 2020",
     },
     icon: AsabeaIcon,
     url: "https://asabea-el.com",
   },
   {
     company: "AbiBeck Software Solutions",
-    role: "Web Developer Intern",
+    role: "Junior Software Developer",
     duration: {
       start: "May 2018",
-      end: "August 2018",
+      end: "July 2019",
     },
     icon: AbiBeckLogo,
     url: "https://abibeck.xyz",
