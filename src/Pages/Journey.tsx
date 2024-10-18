@@ -99,7 +99,7 @@ const Journey = () => {
                             </div>
 
                             <div className="block md:hidden relative h-fit text-slate-400 text-sm font-semibold w-[100%] ">
-                              <div className="w-[45%]">
+                              <div className="w-full">
                                 {elements?.duration?.start} -{" "}
                                 {elements?.duration?.end}
                               </div>
