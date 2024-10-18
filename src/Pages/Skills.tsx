@@ -85,32 +85,16 @@ const Skills = () => {
 
         <section className="w-fit mx-auto">
           <section className="mx-auto flex flex-wrap justify-center items-center w-fit" style={{borderTop:`1px solid ${currentTheme}`, paddingTop: currentContent?.id === "frontend" ? "20px" : ""}}>
-            {currentContent.id === "frontend" &&
-              currentContent?.data?.map((elements, index) => {
-                return (
-                  <div key={index} className="p-4 text-center">
-                    <div className="animate-bounce">
-                      <img
-                        src={elements.icon}
-                        alt={elements?.title}
-                        className="w-16 h-16 rounded-full bg-center bg-no-repeat border-2 border-white p-2 "
-                      ></img>
-                    </div>
-                    <div>{elements?.title}</div>
-                  </div>
-                );
-              })}
-
-            {currentContent?.mainTech && (
+         
               <section className=" ld:mx-auto">
                 <h1
                   className="text-center py-2 font-bold text-xl"
                   style={{ color: currentTheme }}
                 >
-                  Main
+                  {/* Main */}
                 </h1>
                 <section className="border-0 w-fit mx-auto flex flex-wrap">
-                  {currentContent?.mainTech?.data?.map((elements, index) => {
+                  {currentContent?.data?.map((elements, index) => {
                     return (
                       <div key={index} className="p-4 text-center">
                         <div className="animate-bounce">
@@ -126,61 +110,8 @@ const Skills = () => {
                   })}
                 </section>
               </section>
-            )}
 
-            {currentContent?.databases && (
-              <section>
-                <h1
-                  className="text-center py-5 font-bold text-xl"
-                  style={{ color: currentTheme }}
-                >
-                  Databases
-                </h1>
-                <section className="border-0 w-fit mx-auto flex flex-wrap">
-                  {currentContent?.databases?.data?.map((elements, index) => {
-                    return (
-                      <div key={index} className="p-4 text-center">
-                        <div className="animate-bounce">
-                          <img
-                            src={elements.icon}
-                            alt={elements?.title}
-                            className="w-16 h-16 rounded-full bg-center bg-no-repeat border-2 border-white p-2 "
-                          ></img>
-                        </div>
-                        <div>{elements?.title}</div>
-                      </div>
-                    );
-                  })}
-                </section>
-              </section>
-            )}
 
-            {currentContent?.OtherTools && (
-              <section>
-                <h3
-                  className="text-center py-1 font-bold text-md"
-                  style={{ color: currentTheme }}
-                >
-                  Other Tools
-                </h3>
-                <section className="border-0 w-fit mx-auto flex flex-wrap">
-                  {currentContent?.OtherTools?.data?.map((elements, index) => {
-                    return (
-                      <div key={index} className="p-4 text-center">
-                        <div className="animate-bounce">
-                          <img
-                            src={elements.icon}
-                            alt={elements?.title}
-                            className="w-16 h-16 rounded-full bg-center bg-no-repeat border-2 border-white p-2 "
-                          ></img>
-                        </div>
-                        <div>{elements?.title}</div>
-                      </div>
-                    );
-                  })}
-                </section>
-              </section>
-            )}
           </section>
 
           {

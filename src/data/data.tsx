@@ -36,6 +36,7 @@ import mongoDbIcon from "../images/mongoDb.png";
 import gitIcon from "../images/git.png";
 import postmanIcon from "../images/postman.jpeg";
 import graphQL from "../images/graphql.jpg";
+import MysqlIcon from "../images/mysql.jpg";
 
 //PersoalInfoData and Skills are single objects
 //ProjectsData and JourneyData are arrays
@@ -46,8 +47,7 @@ export const PersolInfoData = {
   img: DavidEnsor,
   name: "David Ensor.",
   professions: [
-    "Front-end developer",
-    "Back-end developer",
+    "Fullstack developer",
     "Mobile developer",
   ],
   overview:
@@ -71,41 +71,28 @@ export const SkillsData: iSkillsData = {
     data: [
       { title: "React JS", icon: reactIcon },
       { title: "Next JS", icon: NextJsIcon },
-      { title: "React Native", icon: ReactNativeIcon },
       { title: "Vue JS", icon: vueIcon },
       { title: "Redux", icon: ReduxIcon },
       { title: "Tailwind CSS", icon: tailwindCSSIcon },
       { title: "Boostrap CSS", icon: boostrapIcon },
+      { title: "React Native", icon: ReactNativeIcon },
     ],
     id: "frontend",
   },
   backend: {
     id: "backend",
-    mainTech: {
-      data: [
+    data: [
         { title: "Node Js", icon: nodejsIcon },
         { title: ".Net-core", icon: dotNetIcon },
-        { title: "Python", icon: PythonIcon }
-      ],
-      id: "mainTech",
-    },
-
-    databases: {
-      data: [
+        { title: "Python", icon: PythonIcon },
         { title: "MSSMS", icon: MSSMSicon },
+        { title: "MySQL", icon: MysqlIcon },
         { title: "PostgresQL", icon: postgresQL },
         { title: "MongoDB", icon: mongoDbIcon },
-      ],
-      id: "databases",
-    },
-    OtherTools: {
-      data: [
         { title: "Git", icon: gitIcon },
         { title: "GraphQL", icon: graphQL },
         { title: "Postman", icon: postmanIcon },
-      ],
-      id: "other tools",
-    },
+      ]
   },
 };
 
